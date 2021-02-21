@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище jdmuaModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="adminusercontrol">
+    <Key>
+      <PropertyRef Name="id_cntrl" />
+    </Key>
+    <Property Name="id_cntrl" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="adminstring" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="carinfo">
+    <Key>
+      <PropertyRef Name="car_id" />
+    </Key>
+    <Property Name="car_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mark" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="cartitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="model" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="imgpath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="hwp" Type="int" Nullable="false" />
+    <Property Name="cardescr" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="us">
+    <Key>
+      <PropertyRef Name="Id_u" />
+    </Key>
+    <Property Name="Id_u" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="loginuser" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="dateordered" Type="date" Nullable="false" />
+    <Property Name="id_uctrl" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="FK__us__id_uctrl__3B75D760">
+    <End Role="adminusercontrol" Type="Self.adminusercontrol" Multiplicity="1" />
+    <End Role="us" Type="Self.us" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adminusercontrol">
+        <PropertyRef Name="id_cntrl" />
+      </Principal>
+      <Dependent Role="us">
+        <PropertyRef Name="id_uctrl" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище jdmuaModelContainer">
+    <EntitySet Name="adminusercontrol" EntityType="Self.adminusercontrol" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="carinfo" EntityType="Self.carinfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="us" EntityType="Self.us" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__us__id_uctrl__3B75D760" Association="Self.FK__us__id_uctrl__3B75D760">
+      <End Role="adminusercontrol" EntitySet="adminusercontrol" />
+      <End Role="us" EntitySet="us" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

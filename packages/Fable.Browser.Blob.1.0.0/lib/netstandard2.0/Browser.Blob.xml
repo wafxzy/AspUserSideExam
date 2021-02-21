@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Browser.Blob</name></assembly>
+<members>
+<member name="T:Browser.Types.BlobEndings.Native">
+<summary>
+ Line ending characters are changed to match host OS filesystem convention
+</summary>
+</member>
+<member name="T:Browser.Types.BlobEndings.Transparent">
+<summary>
+ Endings are stored in the blob without change
+</summary>
+</member>
+</members>
+</doc>

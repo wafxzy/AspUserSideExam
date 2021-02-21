@@ -1,0 +1,117 @@
+﻿@model IEnumerable<examuser.carinfo>
+
+@{
+    ViewBag.Title = "GalleryList";
+}
+
+<link href="~/stylesheet/indexlayout.css" rel="stylesheet" />
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<diV id="myCarousel" class="carousel slide" data-ride="carousel" data-aos="zoom-in" height="749px">
+    <Ul class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </Ul>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/IMG/115.jpg" />
+            <div class="carousel-caption">
+                <h2>Наша лучшая Обклейка</h2>
+
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/IMG/18.jpg" />
+            <div class="carousel-caption">
+                <h2>Наш обвес и реставраци </h2>
+                <br />
+            </div>
+        </div>
+        <div class="item">
+            <img src="~/IMG/113.jpg" />
+            <div class="carousel-caption">
+                <h2>Лучший тюнинг и Обклейка винилом </h2>
+                <br />
+            </div>
+        </div>
+    </div>
+    <!--end slider-->
+
+
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">next  </span>
+    </a>
+</diV>
+<br />
+
+<div class="container text-center">
+    <h2 data-aos="zoom-in-down">Наши работы</h2>
+    </div>
+<br />
+    <table class="table table-hover table-dark">
+        <tr>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.mark)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.cartitle)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.model)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.imgpath)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.hwp)
+            </th>
+            <th scope="col">
+                @Html.DisplayNameFor(model => model.cardescr)
+            </th>
+            <th scope="col"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mark)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cartitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.model)
+                </td>
+                <td>
+                    <img src="@Url.Content(item.imgpath)" width="350" height="250" multiple />
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.hwp)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cardescr)
+                </td>
+                <td>
+
+                    @Html.ActionLink("Детали", "Details", new { id = item.car_id })
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+

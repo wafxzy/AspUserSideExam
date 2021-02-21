@@ -1,0 +1,4421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Browser.Dom</name></assembly>
+<members>
+<member name="M:Browser.Types.History.replaceState(System.Object,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>
+ Updates the most recent entry on the history stack to have the specified data, title, and, if provided, URL. The data is treated as opaque by the DOM; you may specify any JavaScript object that can be serialized.
+</summary>
+</member>
+<member name="M:Browser.Types.History.pushState(System.Object,Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String})">
+<summary>
+ Pushes the given data onto the session history stack with the specified title and, if provided, URL. The data is treated as opaque by the DOM; you may specify any JavaScript object that can be serialized.
+</summary>
+</member>
+<member name="M:Browser.Types.History.go(Microsoft.FSharp.Core.FSharpOption{System.Int32})">
+<summary>
+ Loads a page from the session history, identified by its relative location to the current page, for example -1 for the previous page or 1  for the next page. If you specify an out-of-bounds value (for instance, specifying -1 when there are no previously-visited pages in the session history), this method silently has no effect. Calling go() without parameters or a value of 0 reloads the current page.
+</summary>
+</member>
+<member name="M:Browser.Types.History.forward">
+<summary>
+ Equivalent to history.go(1)
+</summary>
+</member>
+<member name="M:Browser.Types.History.back">
+<summary>
+ Equivalent to history.go(-1)
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableAlignment.vAlign(System.String)">
+<summary>
+ Sets or retrieves how text and other content are vertically aligned within the object that contains them.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableAlignment.chOff(System.String)">
+<summary>
+ Sets or retrieves a value that you can use to implement your own chOff functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableAlignment.ch(System.String)">
+<summary>
+ Sets or retrieves a value that you can use to implement your own ch functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableAlignment.vAlign">
+<summary>
+ Sets or retrieves how text and other content are vertically aligned within the object that contains them.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableAlignment.chOff">
+<summary>
+ Sets or retrieves a value that you can use to implement your own chOff functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableAlignment.ch">
+<summary>
+ Sets or retrieves a value that you can use to implement your own ch functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLVideoElement.videoWidth(System.Double)">
+<summary>
+ Gets the intrinsic width of a video in CSS pixels, or zero if the dimensions are not known.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLVideoElement.videoHeight(System.Double)">
+<summary>
+ Gets the intrinsic height of a video in CSS pixels, or zero if the dimensions are not known.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLVideoElement.poster(System.String)">
+<summary>
+ Gets or sets a URL of an image to display, for example, like a movie poster. This can be a still frame from the video, or another image if no video data is available.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLVideoElement.videoWidth">
+<summary>
+ Gets the intrinsic width of a video in CSS pixels, or zero if the dimensions are not known.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLVideoElement.videoHeight">
+<summary>
+ Gets the intrinsic height of a video in CSS pixels, or zero if the dimensions are not known.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLVideoElement.poster">
+<summary>
+ Gets or sets a URL of an image to display, for example, like a movie poster. This can be a still frame from the video, or another image if no video data is available.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.wrap(System.String)">
+<summary>
+ Sets or retrieves how to handle wordwrapping in the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.willValidate(System.Boolean)">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.validity(Browser.Types.ValidityState)">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.validationMessage(System.String)">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.selectionStart(System.Int32)">
+<summary>
+ Gets or sets the starting position or offset of a text selection.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.selectionEnd(System.Int32)">
+<summary>
+ Gets or sets the end position or offset of a text selection.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.rows(System.Int32)">
+<summary>
+ Sets or retrieves the number of horizontal rows contained in the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.required(System.Boolean)">
+<summary>
+ When present, marks an element that can&apos;t be submitted without a value.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.placeholder(System.String)">
+<summary>
+ Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.maxLength(System.Int32)">
+<summary>
+ Sets or retrieves the maximum number of characters that the user can enter in a text control.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.defaultValue(System.String)">
+<summary>
+ Sets or retrieves the initial contents of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.cols(System.Int32)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.autofocus(System.Boolean)">
+<summary>
+ Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTextAreaElement.setSelectionRange(System.Int32,System.Int32)">
+ <param name="start">The offset into the text field for the start of the selection.</param>
+ <param name="end">The offset into the text field for the end of the selection.</param>
+</member>
+<member name="M:Browser.Types.HTMLTextAreaElement.setCustomValidity(System.String)">
+ <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.wrap">
+<summary>
+ Sets or retrieves how to handle wordwrapping in the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.willValidate">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.validity">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.validationMessage">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.selectionStart">
+<summary>
+ Gets or sets the starting position or offset of a text selection.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.selectionEnd">
+<summary>
+ Gets or sets the end position or offset of a text selection.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.rows">
+<summary>
+ Sets or retrieves the number of horizontal rows contained in the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.required">
+<summary>
+ When present, marks an element that can&apos;t be submitted without a value.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.placeholder">
+<summary>
+ Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.maxLength">
+<summary>
+ Sets or retrieves the maximum number of characters that the user can enter in a text control.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.defaultValue">
+<summary>
+ Sets or retrieves the initial contents of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.cols">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTextAreaElement.autofocus">
+<summary>
+ Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTextAreaElement.checkValidity">
+<summary>
+ Returns whether a form will validate when it is submitted, without having to submit it.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableSectionElement.rows(Browser.Types.HTMLCollection)">
+<summary>
+ Sets or retrieves the number of horizontal rows contained in the object.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableSectionElement.insertRow(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <param name="index">Number that specifies where to insert the row in the rows collection. The default value is -1, which appends the new row to the end of the rows collection.</param>
+</member>
+<member name="P:Browser.Types.HTMLTableSectionElement.rows">
+<summary>
+ Sets or retrieves the number of horizontal rows contained in the object.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableSectionElement.deleteRow(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <param name="index">Number that specifies the zero-based position in the rows collection of the row to remove.</param>
+</member>
+<member name="P:Browser.Types.HTMLTableRowElement.sectionRowIndex(System.Double)">
+<summary>
+ Retrieves the position of the object in the collection.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableRowElement.rowIndex(System.Double)">
+<summary>
+ Retrieves the position of the object in the rows collection for the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableRowElement.height(System.Object)">
+<summary>
+ Gets or sets the height of the video element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableRowElement.cells(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection of all cells in the table row.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableRowElement.insertCell(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <summary>Creates a new cell in the table row, and adds the cell to the cells collection.</summary>
+ <param name="index">Number that specifies where to insert the cell in the tr. The default value is -1, which appends the new cell to the end of the cells collection.</param>
+</member>
+<member name="P:Browser.Types.HTMLTableRowElement.sectionRowIndex">
+<summary>
+ Retrieves the position of the object in the collection.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableRowElement.rowIndex">
+<summary>
+ Retrieves the position of the object in the rows collection for the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableRowElement.height">
+<summary>
+ Gets or sets the height of the video element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableRowElement.cells">
+<summary>
+ Retrieves a collection of all cells in the table row.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableRowElement.deleteCell(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <summary>Removes the specified cell from the table row, as well as from the cells collection.</summary>
+ <param name="index">Number that specifies the zero-based position of the cell to remove from the table row. If no value is provided, the last cell in the cells collection is deleted.</param>
+</member>
+<member name="P:Browser.Types.HTMLTableHeaderCellElement.scope(System.String)">
+<summary>
+ Sets or retrieves the group of cells in a table to which the object&apos;s information applies.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableHeaderCellElement.scope">
+<summary>
+ Sets or retrieves the group of cells in a table to which the object&apos;s information applies.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.tHead(Browser.Types.HTMLTableSectionElement)">
+<summary>
+ Retrieves the tHead object of the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.tFoot(Browser.Types.HTMLTableSectionElement)">
+<summary>
+ Retrieves the tFoot object of the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.tBodies(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection of all tBody objects in the table. Objects in this collection are in source order.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.summary(System.String)">
+<summary>
+ Sets or retrieves a description and/or structure of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.rules(System.String)">
+<summary>
+ Sets or retrieves which dividing lines (inner borders) are displayed.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.rows(Browser.Types.HTMLCollection)">
+<summary>
+ Sets or retrieves the number of horizontal rows contained in the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.height(System.Object)">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.cols(System.Double)">
+<summary>
+ Sets or retrieves the number of columns in the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.cellSpacing(System.String)">
+<summary>
+ Sets or retrieves the amount of space between cells in a table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.cellPadding(System.String)">
+<summary>
+ Sets or retrieves the amount of space between the border of the cell and the content of the cell.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.caption(Browser.Types.HTMLTableCaptionElement)">
+<summary>
+ Retrieves the caption object of a table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.borderColor(System.Object)">
+<summary>
+ Sets or retrieves the border color of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.align(System.String)">
+<summary>
+ Sets or retrieves a value that indicates the table alignment.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.insertRow(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <summary>Creates a new row (tr) in the table, and adds the row to the rows collection.</summary>
+ <param name="index">Number that specifies where to insert the row in the rows collection. The default value is -1, which appends the new row to the end of the rows collection.</param>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.tHead">
+<summary>
+ Retrieves the tHead object of the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.tFoot">
+<summary>
+ Retrieves the tFoot object of the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.tBodies">
+<summary>
+ Retrieves a collection of all tBody objects in the table. Objects in this collection are in source order.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.summary">
+<summary>
+ Sets or retrieves a description and/or structure of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.rules">
+<summary>
+ Sets or retrieves which dividing lines (inner borders) are displayed.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.rows">
+<summary>
+ Sets or retrieves the number of horizontal rows contained in the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.height">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.cols">
+<summary>
+ Sets or retrieves the number of columns in the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.cellSpacing">
+<summary>
+ Sets or retrieves the amount of space between cells in a table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.cellPadding">
+<summary>
+ Sets or retrieves the amount of space between the border of the cell and the content of the cell.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.caption">
+<summary>
+ Retrieves the caption object of a table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.borderColor">
+<summary>
+ Sets or retrieves the border color of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableElement.align">
+<summary>
+ Sets or retrieves a value that indicates the table alignment.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.deleteTHead">
+<summary>
+ Deletes the tHead element and its contents from the table.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.deleteTFoot">
+<summary>
+ Deletes the tFoot element and its contents from the table.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.deleteRow(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <summary>Removes the specified row (tr) from the element and from the rows collection.</summary>
+ <param name="index">Number that specifies the zero-based position in the rows collection of the row to remove.</param>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.deleteCaption">
+<summary>
+ Deletes the caption element and its contents from the table.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.createTHead">
+<summary>
+ Returns the tHead element object if successful, or null otherwise.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.createTFoot">
+<summary>
+ Creates an empty tFoot element in the table.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.createTBody">
+<summary>
+ Creates an empty tBody element in the table.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLTableElement.createCaption">
+<summary>
+ Creates an empty caption element in the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableColElement.span(System.Double)">
+<summary>
+ Sets or retrieves the number of columns in the group.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableColElement.align(System.String)">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableColElement.span">
+<summary>
+ Sets or retrieves the number of columns in the group.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableColElement.align">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.width(System.String)">
+<summary>
+ Gets or sets the width of the video element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.scope(System.String)">
+<summary>
+ Sets or retrieves the group of cells in a table to which the object&apos;s information applies.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.rowSpan(System.Double)">
+<summary>
+ Sets or retrieves how many rows in a table the cell should span.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.height(System.Object)">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.headers(System.String)">
+<summary>
+ Sets or retrieves a list of header cells that provide information for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.colSpan(System.Double)">
+<summary>
+ Sets or retrieves the number columns in the table that the object should span.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.cellIndex(System.Double)">
+<summary>
+ Retrieves the position of the object in the cells collection of a row.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.axis(System.String)">
+<summary>
+ Sets or retrieves a comma-delimited list of conceptual categories associated with the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.align(System.String)">
+<summary>
+ Sets or retrieves a value that indicates the table alignment.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.abbr(System.String)">
+<summary>
+ Sets or retrieves abbreviated text for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.width">
+<summary>
+ Gets or sets the width of the video element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.scope">
+<summary>
+ Sets or retrieves the group of cells in a table to which the object&apos;s information applies.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.rowSpan">
+<summary>
+ Sets or retrieves how many rows in a table the cell should span.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.height">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.headers">
+<summary>
+ Sets or retrieves a list of header cells that provide information for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.colSpan">
+<summary>
+ Sets or retrieves the number columns in the table that the object should span.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.cellIndex">
+<summary>
+ Retrieves the position of the object in the cells collection of a row.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.axis">
+<summary>
+ Sets or retrieves a comma-delimited list of conceptual categories associated with the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.align">
+<summary>
+ Sets or retrieves a value that indicates the table alignment.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCellElement.abbr">
+<summary>
+ Sets or retrieves abbreviated text for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCaptionElement.vAlign(System.String)">
+<summary>
+ Sets or retrieves whether the caption appears at the top or bottom of the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCaptionElement.align(System.String)">
+<summary>
+ Sets or retrieves the alignment of the object relative to the display or table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCaptionElement.vAlign">
+<summary>
+ Sets or retrieves whether the caption appears at the top or bottom of the table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLTableCaptionElement.align">
+<summary>
+ Sets or retrieves the alignment of the object relative to the display or table.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLStyleElement.media(System.String)">
+<summary>
+ Sets or retrieves the media type.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLStyleElement.media">
+<summary>
+ Sets or retrieves the media type.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSourceElement.media(System.String)">
+<summary>
+ Gets or sets the intended media type of the media source.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSourceElement.media">
+<summary>
+ Gets or sets the intended media type of the media source.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.willValidate(System.Boolean)">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.validity(Browser.Types.ValidityState)">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.validationMessage(System.String)">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.selectedIndex(System.Int32)">
+<summary>
+ Sets or retrieves the index of the selected option in a select object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.required(System.Boolean)">
+<summary>
+ When present, marks an element that can&apos;t be submitted without a value.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.multiple(System.Boolean)">
+<summary>
+ Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.autofocus(System.Boolean)">
+<summary>
+ Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLSelectElement.setCustomValidity(System.String)">
+ <summary>Sets a custom error message that is displayed when a form is submitted.</summary>
+ <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
+</member>
+<member name="M:Browser.Types.HTMLSelectElement.remove(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <param name="index">Number that specifies the zero-based index of the element to remove from the collection.</param>
+</member>
+<member name="M:Browser.Types.HTMLSelectElement.item(Microsoft.FSharp.Core.FSharpOption{System.Object},Microsoft.FSharp.Core.FSharpOption{System.Object})">
+ <param name="name">Variant of type Number or String that specifies the object or collection to retrieve. If this parameter is a Number, it is the zero-based index of the object. If this parameter is a string, all objects with matching name or id properties are retrieved, and a collection is returned if more than one match is made.</param>
+ <param name="index">Variant of type Number that specifies the zero-based index of the object to retrieve when a collection is returned.</param>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.willValidate">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.validity">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.validationMessage">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.selectedIndex">
+<summary>
+ Sets or retrieves the index of the selected option in a select object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.required">
+<summary>
+ When present, marks an element that can&apos;t be submitted without a value.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.multiple">
+<summary>
+ Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.length">
+<summary>
+ Sets or retrieves the number of objects in a collection.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLSelectElement.autofocus">
+<summary>
+ Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLSelectElement.checkValidity">
+<summary>
+ Returns whether a form will validate when it is submitted, without having to submit it.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.type(System.String)">
+<summary>
+ Retrieves the type of control.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.src(System.String)">
+<summary>
+ The address or URL of the a media resource that is to be considered.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.htmlFor(System.String)">
+<summary>
+ Sets or retrieves the object that is bound to the event script.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.event(System.String)">
+<summary>
+ Sets or retrieves the event for which the script is written.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.defer(System.Boolean)">
+<summary>
+ Sets or retrieves the status of the script.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.charset(System.String)">
+<summary>
+ Sets or retrieves the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.type">
+<summary>
+ Retrieves the type of control.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.src">
+<summary>
+ The address or URL of the a media resource that is to be considered.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.htmlFor">
+<summary>
+ Sets or retrieves the object that is bound to the event script.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.event">
+<summary>
+ Sets or retrieves the event for which the script is written.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.defer">
+<summary>
+ Sets or retrieves the status of the script.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLScriptElement.charset">
+<summary>
+ Sets or retrieves the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLProgressElement.position(System.Double)">
+<summary>
+ Returns the quotient of value/max when the value attribute is set (determinate progress bar), or -1 when the value attribute is missing (indeterminate progress bar).
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLProgressElement.position">
+<summary>
+ Returns the quotient of value/max when the value attribute is set (determinate progress bar), or -1 when the value attribute is missing (indeterminate progress bar).
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLPreElement.width(System.Double)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLPreElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLParamElement.valueType(System.String)">
+<summary>
+ Sets or retrieves the data type of the value attribute.
+ Retrieves or sets the text in the entry field of the textArea element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLParamElement.value(System.String)">
+<summary>
+ Sets or retrieves the value which is returned to the server when the form control is submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLParamElement.type(System.String)">
+<summary>
+ Retrieves the CSS language in which the style sheet is written.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLParamElement.valueType">
+<summary>
+ Sets or retrieves the data type of the value attribute.
+ Retrieves or sets the text in the entry field of the textArea element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLParamElement.value">
+<summary>
+ Sets or retrieves the value which is returned to the server when the form control is submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLParamElement.type">
+<summary>
+ Retrieves the CSS language in which the style sheet is written.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLParagraphElement.align(System.String)">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLParagraphElement.align">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.value(System.String)">
+<summary>
+ Sets or gets the current value of a progress element. The value must be a non-negative number between 0 and the max value.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.text(System.String)">
+<summary>
+ Retrieves or sets the text of the object as a string.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.selected(System.Boolean)">
+<summary>
+ Sets or retrieves whether the option in the list box is the default item.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.label(System.String)">
+<summary>
+ Sets or retrieves a value that you can use to implement your own label functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.index(System.Int32)">
+<summary>
+ Sets or retrieves the ordinal position of an option in a list box.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.defaultSelected(System.Boolean)">
+<summary>
+ Sets or retrieves the status of an option.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.value">
+<summary>
+ Sets or gets the current value of a progress element. The value must be a non-negative number between 0 and the max value.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.text">
+<summary>
+ Retrieves or sets the text of the object as a string.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.selected">
+<summary>
+ Sets or retrieves whether the option in the list box is the default item.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.label">
+<summary>
+ Sets or retrieves a value that you can use to implement your own label functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.index">
+<summary>
+ Sets or retrieves the ordinal position of an option in a list box.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptionElement.defaultSelected">
+<summary>
+ Sets or retrieves the status of an option.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.value(System.String)">
+<summary>
+ Sets or retrieves the value of an input parameter for an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.text(System.String)">
+<summary>
+ Retrieves or sets the text of the object as a string.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.selected(System.Boolean)">
+<summary>
+ Sets or retrieves whether the option in the list box is the default item.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.label(System.String)">
+<summary>
+ Sets or retrieves a value that you can use to implement your own label functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.index(System.Int32)">
+<summary>
+ Sets or retrieves the ordinal position of an option in a list box.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.defaultSelected(System.Boolean)">
+<summary>
+ Sets or retrieves the status of an option.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.value">
+<summary>
+ Sets or retrieves the value of an input parameter for an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.text">
+<summary>
+ Retrieves or sets the text of the object as a string.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.selected">
+<summary>
+ Sets or retrieves whether the option in the list box is the default item.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.label">
+<summary>
+ Sets or retrieves a value that you can use to implement your own label functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.index">
+<summary>
+ Sets or retrieves the ordinal position of an option in a list box.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOptGroupElement.defaultSelected">
+<summary>
+ Sets or retrieves the status of an option.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.willValidate(System.Boolean)">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.width(System.String)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.validity(Browser.Types.ValidityState)">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.validationMessage(System.String)">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.useMap(System.String)">
+<summary>
+ Sets or retrieves the URL, often with a bookmark extension (#name), to use as a client-side image map.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.type(System.String)">
+<summary>
+ Gets or sets the MIME type of a media resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.standby(System.String)">
+<summary>
+ Sets or retrieves a message to be displayed while an object is loading.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.height(System.String)">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.contentDocument(Browser.Types.Document)">
+<summary>
+ Retrieves the document object of the page or frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.codeType(System.String)">
+<summary>
+ Sets or retrieves the Internet media type for the code associated with the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.codeBase(System.String)">
+<summary>
+ Sets or retrieves the URL of the component.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.archive(System.String)">
+<summary>
+ Sets or retrieves a character string that can be used to implement your own archive functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.altHtml(System.String)">
+<summary>
+ Gets or sets the optional alternative HTML script to execute if the object fails to load.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.align(System.String)">
+<summary>
+ Sets or retrieves the alignment of the caption or legend.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.BaseHref(System.String)">
+<summary>
+ Retrieves a string of the URL where the object tag can be found. This is often the href of the document that the object is in, or the value set by a base element.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLObjectElement.setCustomValidity(System.String)">
+ <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.willValidate">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.validity">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.validationMessage">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.useMap">
+<summary>
+ Sets or retrieves the URL, often with a bookmark extension (#name), to use as a client-side image map.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.type">
+<summary>
+ Gets or sets the MIME type of a media resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.standby">
+<summary>
+ Sets or retrieves a message to be displayed while an object is loading.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.height">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.contentDocument">
+<summary>
+ Retrieves the document object of the page or frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.codeType">
+<summary>
+ Sets or retrieves the Internet media type for the code associated with the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.codeBase">
+<summary>
+ Sets or retrieves the URL of the component.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.archive">
+<summary>
+ Sets or retrieves a character string that can be used to implement your own archive functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.altHtml">
+<summary>
+ Gets or sets the optional alternative HTML script to execute if the object fails to load.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.align">
+<summary>
+ Sets or retrieves the alignment of the caption or legend.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLObjectElement.BaseHref">
+<summary>
+ Retrieves a string of the URL where the object tag can be found. This is often the href of the document that the object is in, or the value set by a base element.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLObjectElement.checkValidity">
+<summary>
+ Returns whether a form will validate when it is submitted, without having to submit it.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOListElement.type(System.String)">
+<summary>
+ Retrieves the type of select control based on the value of the MULTIPLE attribute.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLOListElement.type">
+<summary>
+ Retrieves the type of select control based on the value of the MULTIPLE attribute.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLModElement.dateTime(System.String)">
+<summary>
+ Sets or retrieves the date and time of a modification to the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLModElement.cite(System.String)">
+<summary>
+ Sets or retrieves reference information about the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLModElement.dateTime">
+<summary>
+ Sets or retrieves the date and time of a modification to the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLModElement.cite">
+<summary>
+ Sets or retrieves reference information about the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMetaElement.url(System.String)">
+<summary>
+ Sets or retrieves the URL property that will be loaded after the specified time has elapsed.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMetaElement.scheme(System.String)">
+<summary>
+ Sets or retrieves a scheme to be used in interpreting the value of a property specified for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMetaElement.httpEquiv(System.String)">
+<summary>
+ Gets or sets information used to bind the value of a content attribute of a meta element to an HTTP response header.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMetaElement.charset(System.String)">
+<summary>
+ Sets or retrieves the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMetaElement.url">
+<summary>
+ Sets or retrieves the URL property that will be loaded after the specified time has elapsed.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMetaElement.scheme">
+<summary>
+ Sets or retrieves a scheme to be used in interpreting the value of a property specified for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMetaElement.httpEquiv">
+<summary>
+ Gets or sets information used to bind the value of a content attribute of a meta element to an HTTP response header.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMetaElement.charset">
+<summary>
+ Sets or retrieves the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMenuElement.type(System.String)">
+<summary>
+ Sets or retrieves the MIME type for the associated scripting engine.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMenuElement.type">
+<summary>
+ Sets or retrieves the MIME type for the associated scripting engine.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.volume(System.Double)">
+<summary>
+ Gets or sets the volume level for audio portions of the media element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.textTracks(Browser.Types.TextTrackList)">
+<summary>
+ Sets or retrieves the text string specified by the option tag.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.src(System.String)">
+<summary>
+ Retrieves the URL to an external file that contains the source code or data.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.seeking(System.Boolean)">
+<summary>
+ Gets a flag that indicates whether the the client is currently moving to a new playback position in the media resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.seekable(Browser.Types.TimeRanges)">
+<summary>
+ Returns a TimeRanges object that represents the ranges of the current media resource that can be seeked.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.preload(System.String)">
+<summary>
+ Gets or sets the current playback position, in seconds.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.played(Browser.Types.TimeRanges)">
+<summary>
+ Gets TimeRanges for the current media resource that has been played.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.playbackRate(System.Double)">
+<summary>
+ Gets or sets the current rate of speed for the media resource to play. This speed is expressed as a multiple of the normal speed of the media resource.
+ Loads and starts playback of a media resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.paused(System.Boolean)">
+<summary>
+ Gets a flag that specifies whether playback is paused.
+ Pauses the current playback and sets paused to TRUE. This can be used to test whether the media is playing or paused. You can also use the pause or play events to tell whether the media is playing or not.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.networkState(System.Double)">
+<summary>
+ Gets the current network activity for the element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.muted(System.Boolean)">
+<summary>
+ Gets or sets a flag that indicates whether the audio (either audio or the audio track on video media) is muted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.error(Browser.Types.MediaError)">
+<summary>
+ Returns an object representing the current error state of the audio or video element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.ended(System.Boolean)">
+<summary>
+ Gets information about whether the playback has ended or not.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.duration(System.Double)">
+<summary>
+ Returns the duration in seconds of the current media resource. A NaN value is returned if duration is not available, or Infinity if the media resource is streaming.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.defaultPlaybackRate(System.Double)">
+<summary>
+ Gets or sets the default playback rate when the user is not using fast forward or reverse for a video or audio resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.currentTime(System.Double)">
+<summary>
+ Gets or sets the current playback position, in seconds.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.controls(System.Boolean)">
+<summary>
+ Gets or sets a flag that indicates whether the client provides a set of controls for the media (in case the developer does not include controls for the player).
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.buffered(Browser.Types.TimeRanges)">
+<summary>
+ Gets a collection of buffered time ranges.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.autoplay(System.Boolean)">
+<summary>
+ Gets or sets a value that indicates whether to start playing the media automatically.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.audioTracks(Browser.Types.AudioTrackList)">
+<summary>
+ Returns an AudioTrackList object with the audio tracks for a given video element.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLMediaElement.load">
+<summary>
+ Resets the audio or video object and loads a new media resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.volume">
+<summary>
+ Gets or sets the volume level for audio portions of the media element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.textTracks">
+<summary>
+ Sets or retrieves the text string specified by the option tag.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.src">
+<summary>
+ Retrieves the URL to an external file that contains the source code or data.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.seeking">
+<summary>
+ Gets a flag that indicates whether the the client is currently moving to a new playback position in the media resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.seekable">
+<summary>
+ Returns a TimeRanges object that represents the ranges of the current media resource that can be seeked.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.preload">
+<summary>
+ Gets or sets the current playback position, in seconds.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.played">
+<summary>
+ Gets TimeRanges for the current media resource that has been played.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.playbackRate">
+<summary>
+ Gets or sets the current rate of speed for the media resource to play. This speed is expressed as a multiple of the normal speed of the media resource.
+ Loads and starts playback of a media resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.paused">
+<summary>
+ Gets a flag that specifies whether playback is paused.
+ Pauses the current playback and sets paused to TRUE. This can be used to test whether the media is playing or paused. You can also use the pause or play events to tell whether the media is playing or not.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.networkState">
+<summary>
+ Gets the current network activity for the element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.muted">
+<summary>
+ Gets or sets a flag that indicates whether the audio (either audio or the audio track on video media) is muted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.error">
+<summary>
+ Returns an object representing the current error state of the audio or video element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.ended">
+<summary>
+ Gets information about whether the playback has ended or not.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.duration">
+<summary>
+ Returns the duration in seconds of the current media resource. A NaN value is returned if duration is not available, or Infinity if the media resource is streaming.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.defaultPlaybackRate">
+<summary>
+ Gets or sets the default playback rate when the user is not using fast forward or reverse for a video or audio resource.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.currentTime">
+<summary>
+ Gets or sets the current playback position, in seconds.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.controls">
+<summary>
+ Gets or sets a flag that indicates whether the client provides a set of controls for the media (in case the developer does not include controls for the player).
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.buffered">
+<summary>
+ Gets a collection of buffered time ranges.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.autoplay">
+<summary>
+ Gets or sets a value that indicates whether to start playing the media automatically.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMediaElement.audioTracks">
+<summary>
+ Returns an AudioTrackList object with the audio tracks for a given video element.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLMediaElement.canPlayType(System.String)">
+<summary>
+ Returns a string that specifies whether the client can play a given media resource type.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMapElement.name(System.String)">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMapElement.areas(Browser.Types.HTMLAreasCollection)">
+<summary>
+ Retrieves a collection of the area objects defined for the given map object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMapElement.name">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLMapElement.areas">
+<summary>
+ Retrieves a collection of the area objects defined for the given map object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.type(System.String)">
+<summary>
+ Sets or retrieves the content type of the resource designated by the value attribute.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.target(System.String)">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.rev(System.String)">
+<summary>
+ Sets or retrieves the relationship between the object and the destination of the link.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.media(System.String)">
+<summary>
+ Sets or retrieves the media type.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.hreflang(System.String)">
+<summary>
+ Sets or retrieves the language code of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.charset(System.String)">
+<summary>
+ Sets or retrieves the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.type">
+<summary>
+ Sets or retrieves the content type of the resource designated by the value attribute.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.target">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.rev">
+<summary>
+ Sets or retrieves the relationship between the object and the destination of the link.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.media">
+<summary>
+ Sets or retrieves the media type.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.hreflang">
+<summary>
+ Sets or retrieves the language code of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLinkElement.charset">
+<summary>
+ Sets or retrieves the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLegendElement.align(System.String)">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLegendElement.align">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLabelElement.htmlFor(System.String)">
+<summary>
+ Sets or retrieves the object to which the given label object is assigned.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLabelElement.htmlFor">
+<summary>
+ Sets or retrieves the object to which the given label object is assigned.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLIElement.value(System.Double)">
+<summary>
+ Sets or retrieves the value which is returned to the server when the form control is submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLIElement.type(System.String)">
+<summary>
+ Sets or retrieves the MIME type of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLIElement.value">
+<summary>
+ Sets or retrieves the value which is returned to the server when the form control is submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLLIElement.type">
+<summary>
+ Sets or retrieves the MIME type of the object.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLInputElement.stepUp(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <summary>Increments a range input control's value by the value given by the Step attribute. If the optional parameter is used, will increment the input control's value by that value.</summary>
+ <param name="n">Value to increment the value by.</param>
+</member>
+<member name="M:Browser.Types.HTMLInputElement.stepDown(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <summary>Decrements a range input control's value by the value given by the Step attribute. If the optional parameter is used, it will decrement the input control's step value multiplied by the parameter's value.</summary>
+ <param name="n">Value to decrement the value by.</param>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.willValidate(System.Boolean)">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.width(System.String)">
+<summary>
+ Sets or gets a value that you can use to implement your own width functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.valueAsNumber(System.Double)">
+<summary>
+ Returns the input field value as a number.
+ Sets or retrieves the value which is returned to the server when the form control is submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.valueAsDate(System.DateTime)">
+<summary>
+ Sets or retrieves the value of a list item.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.value(System.String)">
+<summary>
+ Returns the value of the data at the cursor&apos;s current position.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.validity(Browser.Types.ValidityState)">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.validationMessage(System.String)">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.useMap(System.String)">
+<summary>
+ Sets or retrieves the URL, often with a bookmark extension (#name), to use as a client-side image map.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.type(System.String)">
+<summary>
+ Sets or retrieves the MIME type of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.step(System.String)">
+<summary>
+ Defines an increment or jump between values that you want to allow the user to enter. When used with the max and min attributes, lets you control the range and increment (for example, allow only even numbers) that the user can enter into an input field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.src(System.String)">
+<summary>
+ The address or URL of the a media resource that is to be considered.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.size(System.Int32)">
+<summary>
+ Sets or retrieves the number of rows in the list box.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.selectionStart(System.Int32)">
+<summary>
+ Gets or sets the starting position or offset of a text selection.
+ Highlights the input area of a form element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.selectionEnd(System.Int32)">
+<summary>
+ Gets or sets the end position or offset of a text selection.
+ Makes the selection equal to the current object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.required(System.Boolean)">
+<summary>
+ When present, marks an element that can&apos;t be submitted without a value.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.readOnly(System.Boolean)">
+<summary>
+ Sets or retrieves the value indicated whether the content of the object is read-only.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.placeholder(System.String)">
+<summary>
+ Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.pattern(System.String)">
+<summary>
+ Gets or sets a string containing a regular expression that the user&apos;s input must match.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.name(System.String)">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.multiple(System.Boolean)">
+<summary>
+ Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.min(System.String)">
+<summary>
+ Defines the minimum acceptable value for an input element with type=&quot;number&quot;. When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.maxLength(System.Int32)">
+<summary>
+ Sets or retrieves the maximum number of characters that the user can enter in a text control.
+ Defines the maximum, or &quot;done&quot; value for a progress element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.max(System.String)">
+<summary>
+ Defines the maximum acceptable value for an input element with type=&quot;number&quot;.When used with the min and step attributes, lets you control the range and increment (such as only even numbers) that the user can enter into an input field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.list(Browser.Types.HTMLElement)">
+<summary>
+ Specifies the ID of a pre-defined datalist of options for an input element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.height(System.String)">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formTarget(System.String)">
+<summary>
+ Overrides the target attribute on a form element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formNoValidate(System.String)">
+<summary>
+ Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a &quot;save draft&quot;-type submit option.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formMethod(System.String)">
+<summary>
+ Overrides the submit method attribute previously specified on a form element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formEnctype(System.String)">
+<summary>
+ Used to override the encoding (formEnctype attribute) specified on the form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formAction(System.String)">
+<summary>
+ Overrides the action attribute (where the data on a form is sent) on the parent form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.form(Browser.Types.HTMLFormElement)">
+<summary>
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.files(Browser.Types.FileList)">
+<summary>
+ Returns a FileList object on a file type input object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.defaultValue(System.String)">
+<summary>
+ Sets or retrieves the initial contents of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.defaultChecked(System.Boolean)">
+<summary>
+ Sets or retrieves the state of the check box or radio button.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.complete(System.Boolean)">
+<summary>
+ Retrieves whether the object is fully loaded.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.checked(System.Boolean)">
+<summary>
+ Sets or retrieves the state of the check box or radio button.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.autofocus(System.Boolean)">
+<summary>
+ Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.autocomplete(System.String)">
+<summary>
+ Specifies whether autocomplete is applied to an editable text field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.alt(System.String)">
+<summary>
+ Sets or retrieves a text alternative to the graphic.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.align(System.String)">
+<summary>
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLInputElement.setSelectionRange(System.Int32,System.Int32)">
+ <summary>Sets the start and end positions of a selection in a text field.</summary>
+ <param name="start">The offset into the text field for the start of the selection.</param>
+ <param name="end">The offset into the text field for the end of the selection.</param>
+</member>
+<member name="M:Browser.Types.HTMLInputElement.setCustomValidity(System.String)">
+ <summary>Sets a custom error message that is displayed when a form is submitted.</summary>
+ <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.willValidate">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.width">
+<summary>
+ Sets or gets a value that you can use to implement your own width functionality for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.valueAsNumber">
+<summary>
+ Returns the input field value as a number.
+ Sets or retrieves the value which is returned to the server when the form control is submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.valueAsDate">
+<summary>
+ Sets or retrieves the value of a list item.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.value">
+<summary>
+ Returns the value of the data at the cursor&apos;s current position.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.validity">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.validationMessage">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.useMap">
+<summary>
+ Sets or retrieves the URL, often with a bookmark extension (#name), to use as a client-side image map.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.type">
+<summary>
+ Sets or retrieves the MIME type of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.step">
+<summary>
+ Defines an increment or jump between values that you want to allow the user to enter. When used with the max and min attributes, lets you control the range and increment (for example, allow only even numbers) that the user can enter into an input field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.src">
+<summary>
+ The address or URL of the a media resource that is to be considered.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.size">
+<summary>
+ Sets or retrieves the number of rows in the list box.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.selectionStart">
+<summary>
+ Gets or sets the starting position or offset of a text selection.
+ Highlights the input area of a form element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.selectionEnd">
+<summary>
+ Gets or sets the end position or offset of a text selection.
+ Makes the selection equal to the current object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.required">
+<summary>
+ When present, marks an element that can&apos;t be submitted without a value.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.readOnly">
+<summary>
+ Sets or retrieves the value indicated whether the content of the object is read-only.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.placeholder">
+<summary>
+ Gets or sets a text string that is displayed in an input field as a hint or prompt to users as the format or type of information they need to enter.The text appears in an input field until the user puts focus on the field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.pattern">
+<summary>
+ Gets or sets a string containing a regular expression that the user&apos;s input must match.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.name">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.multiple">
+<summary>
+ Sets or retrieves the Boolean value indicating whether multiple items can be selected from a list.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.min">
+<summary>
+ Defines the minimum acceptable value for an input element with type=&quot;number&quot;. When used with the max and step attributes, lets you control the range and increment (such as even numbers only) that the user can enter into an input field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.maxLength">
+<summary>
+ Sets or retrieves the maximum number of characters that the user can enter in a text control.
+ Defines the maximum, or &quot;done&quot; value for a progress element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.max">
+<summary>
+ Defines the maximum acceptable value for an input element with type=&quot;number&quot;.When used with the min and step attributes, lets you control the range and increment (such as only even numbers) that the user can enter into an input field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.list">
+<summary>
+ Specifies the ID of a pre-defined datalist of options for an input element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.height">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formTarget">
+<summary>
+ Overrides the target attribute on a form element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formNoValidate">
+<summary>
+ Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a &quot;save draft&quot;-type submit option.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formMethod">
+<summary>
+ Overrides the submit method attribute previously specified on a form element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formEnctype">
+<summary>
+ Used to override the encoding (formEnctype attribute) specified on the form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.formAction">
+<summary>
+ Overrides the action attribute (where the data on a form is sent) on the parent form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.form">
+<summary>
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.files">
+<summary>
+ Returns a FileList object on a file type input object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.defaultValue">
+<summary>
+ Sets or retrieves the initial contents of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.defaultChecked">
+<summary>
+ Sets or retrieves the state of the check box or radio button.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.complete">
+<summary>
+ Retrieves whether the object is fully loaded.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.checked">
+<summary>
+ Sets or retrieves the state of the check box or radio button.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.autofocus">
+<summary>
+ Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.autocomplete">
+<summary>
+ Specifies whether autocomplete is applied to an editable text field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.alt">
+<summary>
+ Sets or retrieves a text alternative to the graphic.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLInputElement.align">
+<summary>
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLInputElement.checkValidity">
+<summary>
+ Returns whether a form will validate when it is submitted, without having to submit it.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.width(System.Double)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.vspace(System.Double)">
+<summary>
+ Sets or retrieves the vertical margin for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.useMap(System.String)">
+<summary>
+ Sets or retrieves the URL, often with a bookmark extension (#name), to use as a client-side image map.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.srcset(System.String)">
+<summary>
+ The address or URL of the a media resource that is to be considered.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.src(System.String)">
+<summary>
+ The address or URL of the a media resource that is to be considered.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.naturalWidth(System.Double)">
+<summary>
+ The original width of the image resource before sizing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.naturalHeight(System.Double)">
+<summary>
+ The original height of the image resource before sizing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.name(System.String)">
+<summary>
+ Sets or retrieves the name of an input parameter for an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.longDesc(System.String)">
+<summary>
+ Sets or retrieves a Uniform Resource Identifier (URI) to a long description of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.isMap(System.Boolean)">
+<summary>
+ Sets or retrieves whether the image is a server-side image map.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.hspace(System.Double)">
+<summary>
+ Sets or retrieves the width of the border to draw around the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.height(System.Double)">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.currentSrc(System.String)">
+<summary>
+ Gets the address or URL of the current media resource that is selected by IHTMLMediaElement.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.complete(System.Boolean)">
+<summary>
+ Retrieves whether the object is fully loaded.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.alt(System.String)">
+<summary>
+ Sets or retrieves a text alternative to the graphic.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.align(System.String)">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.vspace">
+<summary>
+ Sets or retrieves the vertical margin for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.useMap">
+<summary>
+ Sets or retrieves the URL, often with a bookmark extension (#name), to use as a client-side image map.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.srcset">
+<summary>
+ The address or URL of the a media resource that is to be considered.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.src">
+<summary>
+ The address or URL of the a media resource that is to be considered.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.naturalWidth">
+<summary>
+ The original width of the image resource before sizing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.naturalHeight">
+<summary>
+ The original height of the image resource before sizing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.name">
+<summary>
+ Sets or retrieves the name of an input parameter for an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.longDesc">
+<summary>
+ Sets or retrieves a Uniform Resource Identifier (URI) to a long description of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.isMap">
+<summary>
+ Sets or retrieves whether the image is a server-side image map.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.hspace">
+<summary>
+ Sets or retrieves the width of the border to draw around the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.height">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.currentSrc">
+<summary>
+ Gets the address or URL of the current media resource that is selected by IHTMLMediaElement.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.complete">
+<summary>
+ Retrieves whether the object is fully loaded.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.alt">
+<summary>
+ Sets or retrieves a text alternative to the graphic.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLImageElement.align">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.width(System.String)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.vspace(System.Double)">
+<summary>
+ Sets or retrieves the vertical margin for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.src(System.String)">
+<summary>
+ Sets or retrieves a URL to be loaded by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.scrolling(System.String)">
+<summary>
+ Sets or retrieves whether the frame can be scrolled.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.noResize(System.Boolean)">
+<summary>
+ Sets or retrieves whether the user can resize the frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.name(System.String)">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.marginWidth(System.String)">
+<summary>
+ Sets or retrieves the left and right margin widths before displaying the text in a frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.marginHeight(System.String)">
+<summary>
+ Sets or retrieves the top and bottom margin heights before displaying the text in a frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.longDesc(System.String)">
+<summary>
+ Sets or retrieves a URI to a long description of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.hspace(System.Double)">
+<summary>
+ Sets or retrieves the width of the border to draw around the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.height(System.String)">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.frameSpacing(System.Object)">
+<summary>
+ Sets or retrieves the amount of additional space between the frames.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.frameBorder(System.String)">
+<summary>
+ Sets or retrieves whether to display a border for the frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.contentWindow(Browser.Types.Window)">
+<summary>
+ Retrieves the object of the specified.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.contentDocument(Browser.Types.Document)">
+<summary>
+ Retrieves the document object of the page or frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.align(System.String)">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.vspace">
+<summary>
+ Sets or retrieves the vertical margin for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.src">
+<summary>
+ Sets or retrieves a URL to be loaded by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.scrolling">
+<summary>
+ Sets or retrieves whether the frame can be scrolled.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.noResize">
+<summary>
+ Sets or retrieves whether the user can resize the frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.name">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.marginWidth">
+<summary>
+ Sets or retrieves the left and right margin widths before displaying the text in a frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.marginHeight">
+<summary>
+ Sets or retrieves the top and bottom margin heights before displaying the text in a frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.longDesc">
+<summary>
+ Sets or retrieves a URI to a long description of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.hspace">
+<summary>
+ Sets or retrieves the width of the border to draw around the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.height">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.frameSpacing">
+<summary>
+ Sets or retrieves the amount of additional space between the frames.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.frameBorder">
+<summary>
+ Sets or retrieves whether to display a border for the frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.contentWindow">
+<summary>
+ Retrieves the object of the specified.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.contentDocument">
+<summary>
+ Retrieves the document object of the page or frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLIFrameElement.align">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHtmlElement.version(System.String)">
+<summary>
+ Sets or retrieves the DTD version that governs the current document.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHtmlElement.version">
+<summary>
+ Sets or retrieves the DTD version that governs the current document.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHeadingElement.align(System.String)">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHeadingElement.align">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHRElement.width(System.Double)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHRElement.noShade(System.Boolean)">
+<summary>
+ Sets or retrieves whether the horizontal rule is drawn with 3-D shading.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHRElement.align(System.String)">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHRElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHRElement.noShade">
+<summary>
+ Sets or retrieves whether the horizontal rule is drawn with 3-D shading.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLHRElement.align">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.width(System.Double)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.src(System.String)">
+<summary>
+ Sets or retrieves a URL to be loaded by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.scrolling(System.String)">
+<summary>
+ Sets or retrieves whether the frame can be scrolled.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.noResize(System.Boolean)">
+<summary>
+ Sets or retrieves whether the user can resize the frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.name(System.String)">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.marginWidth(System.String)">
+<summary>
+ Sets or retrieves the left and right margin widths before displaying the text in a frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.marginHeight(System.String)">
+<summary>
+ Sets or retrieves the top and bottom margin heights before displaying the text in a frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.longDesc(System.String)">
+<summary>
+ Sets or retrieves a URI to a long description of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.height(System.Double)">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.frameSpacing(System.Object)">
+<summary>
+ Sets or retrieves the amount of additional space between the frames.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.frameBorder(System.String)">
+<summary>
+ Sets or retrieves whether to display a border for the frame.
+ Sets or retrieves the way the border frame around the table is displayed.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.contentWindow(Browser.Types.Window)">
+<summary>
+ Retrieves the object of the specified.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.contentDocument(Browser.Types.Document)">
+<summary>
+ Retrieves the document object of the page or frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.borderColor(System.Object)">
+<summary>
+ Sets or retrieves the border color of the object.
+ Specifies the properties of a border drawn around an object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.border(System.String)">
+<summary>
+ Specifies the properties of a border drawn around an object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.src">
+<summary>
+ Sets or retrieves a URL to be loaded by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.scrolling">
+<summary>
+ Sets or retrieves whether the frame can be scrolled.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.noResize">
+<summary>
+ Sets or retrieves whether the user can resize the frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.name">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.marginWidth">
+<summary>
+ Sets or retrieves the left and right margin widths before displaying the text in a frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.marginHeight">
+<summary>
+ Sets or retrieves the top and bottom margin heights before displaying the text in a frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.longDesc">
+<summary>
+ Sets or retrieves a URI to a long description of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.height">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.frameSpacing">
+<summary>
+ Sets or retrieves the amount of additional space between the frames.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.frameBorder">
+<summary>
+ Sets or retrieves whether to display a border for the frame.
+ Sets or retrieves the way the border frame around the table is displayed.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.contentWindow">
+<summary>
+ Retrieves the object of the specified.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.contentDocument">
+<summary>
+ Retrieves the document object of the page or frame.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.borderColor">
+<summary>
+ Sets or retrieves the border color of the object.
+ Specifies the properties of a border drawn around an object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFrameElement.border">
+<summary>
+ Specifies the properties of a border drawn around an object.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLFormElement.submit">
+<summary>
+ Fires when a FORM is about to be submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.target(System.String)">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.noValidate(System.Boolean)">
+<summary>
+ Designates a form that is not validated when submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.name(System.String)">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.method(System.String)">
+<summary>
+ Sets or retrieves how to send the form data to the server.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.enctype(System.String)">
+<summary>
+ Sets or retrieves the encoding type for the form.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.encoding(System.String)">
+<summary>
+ Sets or retrieves the MIME encoding for the form.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.elements(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection, in source order, of all controls in a given form.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.autocomplete(System.String)">
+<summary>
+ Specifies whether autocomplete is applied to an editable text field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.action(System.String)">
+<summary>
+ Sets or retrieves the URL to which the form content is sent for processing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.acceptCharset(System.String)">
+<summary>
+ Sets or retrieves a list of character encodings for input data that must be accepted by the server processing the form.
+ Sets or retrieves a comma-separated list of content types.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLFormElement.reset">
+<summary>
+ Fires when the user resets a form.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLFormElement.namedItem(System.String)">
+<summary>
+ Sets or retrieves the name of the object.
+ Retrieves a select object or an object from an options collection.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLFormElement.item(Microsoft.FSharp.Core.FSharpOption{System.Object},Microsoft.FSharp.Core.FSharpOption{System.Object})">
+ <summary>Retrieves a form object or an object from an elements collection.</summary>
+ <param name="name">Variant of type Number or String that specifies the object or collection to retrieve. If this parameter is a Number, it is the zero-based index of the object. If this parameter is a string, all objects with matching name or id properties are retrieved, and a collection is returned if more than one match is made.</param>
+ <param name="index">Variant of type Number that specifies the zero-based index of the object to retrieve when a collection is returned.</param>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.target">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.noValidate">
+<summary>
+ Designates a form that is not validated when submitted.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.name">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.method">
+<summary>
+ Sets or retrieves how to send the form data to the server.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.length">
+<summary>
+ Sets or retrieves the number of objects in a collection.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.enctype">
+<summary>
+ Sets or retrieves the encoding type for the form.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.encoding">
+<summary>
+ Sets or retrieves the MIME encoding for the form.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.elements">
+<summary>
+ Retrieves a collection, in source order, of all controls in a given form.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.autocomplete">
+<summary>
+ Specifies whether autocomplete is applied to an editable text field.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.action">
+<summary>
+ Sets or retrieves the URL to which the form content is sent for processing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFormElement.acceptCharset">
+<summary>
+ Sets or retrieves a list of character encodings for input data that must be accepted by the server processing the form.
+ Sets or retrieves a comma-separated list of content types.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLFormElement.checkValidity">
+<summary>
+ Returns whether a form will validate when it is submitted, without having to submit it.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFontElement.face(System.String)">
+<summary>
+ Sets or retrieves the current typeface family.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFontElement.face">
+<summary>
+ Sets or retrieves the current typeface family.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.willValidate(System.Boolean)">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.validity(Browser.Types.ValidityState)">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.validationMessage(System.String)">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.form(Browser.Types.HTMLFormElement)">
+<summary>
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.align(System.String)">
+<summary>
+ Sets or retrieves a value that indicates the table alignment.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLFieldSetElement.setCustomValidity(System.String)">
+ <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.willValidate">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.validity">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.validationMessage">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.form">
+<summary>
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLFieldSetElement.align">
+<summary>
+ Sets or retrieves a value that indicates the table alignment.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLFieldSetElement.checkValidity">
+<summary>
+ Returns whether a form will validate when it is submitted, without having to submit it.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.width(System.String)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.units(System.String)">
+<summary>
+ Sets or retrieves the height and width units of the embed object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.src(System.String)">
+<summary>
+ Sets or retrieves a URL to be loaded by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.pluginspage(System.String)">
+<summary>
+ Retrieves the URL of the plug-in used to view an embedded document.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.palette(System.String)">
+<summary>
+ Retrieves the palette used for the embedded document.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.name(System.String)">
+<summary>
+ Sets or retrieves the frame name.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.height(System.String)">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.units">
+<summary>
+ Sets or retrieves the height and width units of the embed object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.src">
+<summary>
+ Sets or retrieves a URL to be loaded by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.pluginspage">
+<summary>
+ Retrieves the URL of the plug-in used to view an embedded document.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.palette">
+<summary>
+ Retrieves the palette used for the embedded document.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.name">
+<summary>
+ Sets or retrieves the frame name.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLEmbedElement.height">
+<summary>
+ Sets or retrieves the height of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLElement.dataset(Browser.Types.DOMStringMap)">
+<summary>
+ Sets or retrieves the URL that references the data of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLElement.dataset">
+<summary>
+ Sets or retrieves the URL that references the data of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLDivElement.align(System.String)">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLDivElement.align">
+<summary>
+ Sets or retrieves how the object is aligned with adjacent text.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLDDElement.noWrap(System.Boolean)">
+<summary>
+ Sets or retrieves whether the browser automatically performs wordwrap.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLDDElement.noWrap">
+<summary>
+ Sets or retrieves whether the browser automatically performs wordwrap.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLCanvasElement.toDataURL(Microsoft.FSharp.Core.FSharpOption{System.String},System.Object[])">
+ <summary>Returns the content of the current canvas as an image that you can use as a source for another canvas or an HTML element.</summary>
+ <param name="type">The standard MIME type for the image format to return. If you do not specify this parameter, the default value is a PNG format image.</param>
+</member>
+<member name="M:Browser.Types.HTMLCanvasElement.toBlob(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Blob,Microsoft.FSharp.Core.Unit},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Double})">
+<summary>
+ Returns a blob object encoded as a Portable Network Graphics (PNG) format from a canvas image or drawing.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLCanvasElement.width(System.Double)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLCanvasElement.height(System.Double)">
+<summary>
+ Gets or sets the height of a canvas element on a document.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLCanvasElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLCanvasElement.height">
+<summary>
+ Gets or sets the height of a canvas element on a document.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLCanvasElement.getContext(System.String,Microsoft.FSharp.Core.FSharpOption{System.Object})">
+<summary>
+ Returns an object that provides methods and properties for drawing and manipulating images and graphics on a canvas element in a document. A context object includes information about colors, line widths, fonts, and other graphic parameters that can be drawn on a canvas.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.willValidate(System.Boolean)">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.value(System.String)">
+<summary>
+ Sets or retrieves the default or selected value of the control.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.validity(Browser.Types.ValidityState)">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.validationMessage(System.String)">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.type(System.String)">
+<summary>
+ Returns the content type of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.status(System.Object)">
+<summary>
+ Sets or retrieves the value indicating whether the control is selected.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.name(System.String)">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formTarget(System.String)">
+<summary>
+ Overrides the target attribute on a form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formNoValidate(System.String)">
+<summary>
+ Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a &quot;save draft&quot;-type submit option.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formMethod(System.String)">
+<summary>
+ Overrides the submit method attribute previously specified on a form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formEnctype(System.String)">
+<summary>
+ Used to override the encoding (formEnctype attribute) specified on the form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formAction(System.String)">
+<summary>
+ Overrides the action attribute (where the data on a form is sent) on the parent form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.form(Browser.Types.HTMLFormElement)">
+<summary>
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.autofocus(System.Boolean)">
+<summary>
+ Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLButtonElement.setCustomValidity(System.String)">
+ <summary>Sets a custom error message that is displayed when a form is submitted.</summary>
+ <param name="error">Sets a custom error message that is displayed when a form is submitted.</param>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.willValidate">
+<summary>
+ Returns whether an element will successfully validate based on forms validation rules and constraints.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.value">
+<summary>
+ Sets or retrieves the default or selected value of the control.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.validity">
+<summary>
+ Returns a  ValidityState object that represents the validity states of an element.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.validationMessage">
+<summary>
+ Returns the error message that would be displayed if the user submits the form, or an empty string if no error message. It also triggers the standard error message, such as &quot;this is a required field&quot;. The result is that the user sees validation messages without actually submitting.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.type">
+<summary>
+ Returns the content type of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.status">
+<summary>
+ Sets or retrieves the value indicating whether the control is selected.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.name">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formTarget">
+<summary>
+ Overrides the target attribute on a form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formNoValidate">
+<summary>
+ Overrides any validation or required attributes on a form or form elements to allow it to be submitted without validation. This can be used to create a &quot;save draft&quot;-type submit option.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formMethod">
+<summary>
+ Overrides the submit method attribute previously specified on a form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formEnctype">
+<summary>
+ Used to override the encoding (formEnctype attribute) specified on the form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.formAction">
+<summary>
+ Overrides the action attribute (where the data on a form is sent) on the parent form element.
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.form">
+<summary>
+ Retrieves a reference to the form that the object is embedded in.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLButtonElement.autofocus">
+<summary>
+ Provides a way to direct a user to a specific field when a document loads. This can provide both direction and convenience for a user, reducing the need to click or tab to a field when a page opens. This attribute is true when present on an element, and false when missing.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLButtonElement.checkValidity">
+<summary>
+ Returns whether a form will validate when it is submitted, without having to submit it.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBodyElement.text(System.Object)">
+<summary>
+ Sets or retrieves the text string specified by the option tag.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBodyElement.noWrap(System.Boolean)">
+<summary>
+ Sets or retrieves whether the browser automatically performs wordwrap.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBodyElement.text">
+<summary>
+ Sets or retrieves the text string specified by the option tag.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBodyElement.noWrap">
+<summary>
+ Sets or retrieves whether the browser automatically performs wordwrap.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBlockElement.width(System.Double)">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBlockElement.cite(System.String)">
+<summary>
+ Sets or retrieves reference information about the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBlockElement.width">
+<summary>
+ Sets or retrieves the width of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBlockElement.cite">
+<summary>
+ Sets or retrieves reference information about the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBaseElement.target(System.String)">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBaseElement.href(System.String)">
+<summary>
+ Sets or retrieves a destination URL or an anchor point.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBaseElement.target">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBaseElement.href">
+<summary>
+ Sets or retrieves a destination URL or an anchor point.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBRElement.clear(System.String)">
+<summary>
+ Sets or retrieves the side on which floating objects are not to be positioned when any IHTMLBlockElement is inserted into the document.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLBRElement.clear">
+<summary>
+ Sets or retrieves the side on which floating objects are not to be positioned when any IHTMLBlockElement is inserted into the document.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLAreasCollection.remove(Microsoft.FSharp.Core.FSharpOption{System.Double})">
+ <summary>Removes an element from the collection.</summary>
+ <param name="index">Number that specifies the zero-based index of the element to remove from the collection.</param>
+</member>
+<member name="M:Browser.Types.HTMLAreasCollection.add(Browser.Types.HTMLElement,Microsoft.FSharp.Core.FSharpOption{Fable.Core.U2{Browser.Types.HTMLElement,System.Double}})">
+ <summary>Adds an element to the areas, controlRange, or options collection.</summary>
+ <param name="element">Variant of type Number that specifies the index position in the collection where the element is placed. If no value is given, the method places the element at the end of the collection.</param>
+ <param name="before">Variant of type Object that specifies an element to insert before, or null to append the object to the collection.</param>
+</member>
+<member name="M:Browser.Types.HTMLAreaElement.toString">
+<summary>
+ Returns a string representation of an object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.target(System.String)">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.shape(System.String)">
+<summary>
+ Sets or retrieves the shape of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.search(System.String)">
+<summary>
+ Sets or retrieves the substring of the href property that follows the question mark.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.rel(System.String)">
+<summary>
+ Sets or retrieves the relationship between the object and the destination of the link.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.port(System.String)">
+<summary>
+ Sets or retrieves the port number associated with a URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.pathname(System.String)">
+<summary>
+ Sets or retrieves the file name or path specified by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.noHref(System.Boolean)">
+<summary>
+ Sets or gets whether clicks in this region cause action.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.href(System.String)">
+<summary>
+ Gets or sets the baseline URL on which relative links are based.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.hostname(System.String)">
+<summary>
+ Sets or retrieves the host name part of the location or URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.hash(System.String)">
+<summary>
+ Sets or retrieves the subsection of the href property that follows the number sign (#).
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.coords(System.String)">
+<summary>
+ Sets or retrieves the coordinates of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.alt(System.String)">
+<summary>
+ Sets or retrieves a text alternative to the graphic.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.target">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.shape">
+<summary>
+ Sets or retrieves the shape of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.search">
+<summary>
+ Sets or retrieves the substring of the href property that follows the question mark.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.rel">
+<summary>
+ Sets or retrieves the relationship between the object and the destination of the link.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.port">
+<summary>
+ Sets or retrieves the port number associated with a URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.pathname">
+<summary>
+ Sets or retrieves the file name or path specified by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.noHref">
+<summary>
+ Sets or gets whether clicks in this region cause action.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.href">
+<summary>
+ Gets or sets the baseline URL on which relative links are based.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.hostname">
+<summary>
+ Sets or retrieves the host name part of the location or URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.hash">
+<summary>
+ Sets or retrieves the subsection of the href property that follows the number sign (#).
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.coords">
+<summary>
+ Sets or retrieves the coordinates of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAreaElement.alt">
+<summary>
+ Sets or retrieves a text alternative to the graphic.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLAnchorElement.toString">
+<summary>
+ Returns a string representation of an object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.type(System.String)">
+<summary>
+ Returns the content type of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.text(System.String)">
+<summary>
+ Retrieves or sets the text of the object as a string.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.target(System.String)">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.shape(System.String)">
+<summary>
+ Sets or retrieves the shape of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.search(System.String)">
+<summary>
+ Sets or retrieves the substring of the href property that follows the question mark.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.rev(System.String)">
+<summary>
+ Sets or retrieves the relationship between the object and the destination of the link.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.rel(System.String)">
+<summary>
+ Sets or retrieves the relationship between the object and the destination of the link.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.protocolLong(System.String)">
+<summary>
+ Sets or retrieves the protocol portion of a URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.protocol(System.String)">
+<summary>
+ Contains the protocol of the URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.port(System.String)">
+<summary>
+ Sets or retrieves the port number associated with a URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.pathname(System.String)">
+<summary>
+ Contains the pathname of the URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.nameProp(System.String)">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.name(System.String)">
+<summary>
+ Sets or retrieves the shape of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.hreflang(System.String)">
+<summary>
+ Sets or retrieves the language code of the object.
+ Sets or retrieves a destination URL or an anchor point.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.href(System.String)">
+<summary>
+ Sets or retrieves a destination URL or an anchor point.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.hostname(System.String)">
+<summary>
+ Contains the hostname of a URL.
+ Sets or retrieves the hostname and port number of the location or URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.host(System.String)">
+<summary>
+ Contains the hostname and port values of the URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.hash(System.String)">
+<summary>
+ Contains the anchor portion of the URL including the hash sign (#).
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.coords(System.String)">
+<summary>
+ Sets or retrieves the coordinates of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.charset(System.String)">
+<summary>
+ Sets or retrieves the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.type">
+<summary>
+ Returns the content type of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.text">
+<summary>
+ Retrieves or sets the text of the object as a string.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.target">
+<summary>
+ Sets or retrieves the window or frame at which to target content.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.shape">
+<summary>
+ Sets or retrieves the shape of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.search">
+<summary>
+ Sets or retrieves the substring of the href property that follows the question mark.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.rev">
+<summary>
+ Sets or retrieves the relationship between the object and the destination of the link.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.rel">
+<summary>
+ Sets or retrieves the relationship between the object and the destination of the link.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.protocolLong">
+<summary>
+ Sets or retrieves the protocol portion of a URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.protocol">
+<summary>
+ Contains the protocol of the URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.port">
+<summary>
+ Sets or retrieves the port number associated with a URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.pathname">
+<summary>
+ Contains the pathname of the URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.nameProp">
+<summary>
+ Sets or retrieves the name of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.name">
+<summary>
+ Sets or retrieves the shape of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.hreflang">
+<summary>
+ Sets or retrieves the language code of the object.
+ Sets or retrieves a destination URL or an anchor point.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.href">
+<summary>
+ Sets or retrieves a destination URL or an anchor point.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.hostname">
+<summary>
+ Contains the hostname of a URL.
+ Sets or retrieves the hostname and port number of the location or URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.host">
+<summary>
+ Contains the hostname and port values of the URL.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.hash">
+<summary>
+ Contains the anchor portion of the URL including the hash sign (#).
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.coords">
+<summary>
+ Sets or retrieves the coordinates of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLAnchorElement.charset">
+<summary>
+ Sets or retrieves the character set used to encode the object.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLAllCollection.namedItem(System.String)">
+<summary>
+ Sets or retrieves the shape of the object.
+ Retrieves a select object or an object from an options collection.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLCollection.namedItem(System.String)">
+<summary>
+ Retrieves a form object or an object from an elements collection.
+ Sets or retrieves the frame name.
+</summary>
+</member>
+<member name="M:Browser.Types.HTMLCollection.item(Microsoft.FSharp.Core.FSharpOption{System.Object},Microsoft.FSharp.Core.FSharpOption{System.Object})">
+<summary>
+ Retrieves an object from various collections.
+</summary>
+</member>
+<member name="P:Browser.Types.HTMLCollection.length">
+<summary>
+ Sets or retrieves the number of objects in a collection.
+</summary>
+</member>
+<member name="M:Browser.Types.Element.closest(Browser.Types.Element)">
+ <summary>Returns the closest ancestor of the current element (or the current element itself) which matches the selectors given in a parameter</summary>
+ <param name="element">The `Element` at the top of the tree of elements to be dealt with</param>
+ <returns>The `Element` which is the closest ancestor of the selected elements</returns>
+</member>
+<member name="M:Browser.Types.Element.closest(System.String)">
+ <summary>Returns the closest ancestor of the current element (or the current element itself) which matches the selectors given in a parameter</summary>
+ <param name="selectors">DOMString containing a selector list such as "p:hover, .toto + q"</param>
+ <exception cref="Fable.Core.JS.SyntaxError">Thrown if the selectors is not a valid selector list string.</exception>
+ <returns>The `Element` which is the closest ancestor of the selected elements</returns>
+</member>
+<member name="M:Browser.Types.Document.writeln(System.String[])">
+ <summary>Writes one or more HTML expressions, followed by a carriage return, to a document in the specified window.</summary>
+ <param name="content">The text and HTML tags to write.</param>
+</member>
+<member name="M:Browser.Types.Document.write(System.String[])">
+ <summary>Writes one or more HTML expressions to a document in the specified window.</summary>
+ <param name="content">Specifies the text and HTML tags to write.</param>
+</member>
+<member name="M:Browser.Types.Document.updateSettings">
+<summary>
+ Allows updating the print settings for the page.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.xmlVersion(System.String)">
+<summary>
+ Gets or sets the version attribute specified in the declaration of an XML document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.vlinkColor(System.String)">
+<summary>
+ Sets or gets the color of the links that the user has visited.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.title(System.String)">
+<summary>
+ Contains the title of the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.scripts(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection of all script objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.referrer(System.String)">
+<summary>
+ Gets the URL of the location that referred the user to the current page.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.readyState(System.String)">
+<summary>
+ Retrieves a value that indicates the current state of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onwaiting``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when playback stops because the next frame of a video resource is not available.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onvolumechange``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the volume is changed, or playback is muted or unmuted.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ontimeupdate``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs to indicate the current playback position.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onsuspend``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs if the load operation has been intentionally halted.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onstop``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Fires when the user clicks the Stop button or leaves the Web page.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onstalled``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the download has stopped.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onselect``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.UIEvent,``0})">
+<summary>
+ Fires when the current selection changes.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onseeking``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the current playback position is moved.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onseeked``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the seek operation ends.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onscroll``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.UIEvent,``0})">
+<summary>
+ Fires when the user repositions the scroll box in the scroll bar on the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onreset``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Fires when the user resets a form.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onreadystatechange``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.ProgressEvent,``0})">
+<summary>
+ Fires when the state of the object has changed.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onratechange``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the playback rate is increased or decreased.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onprogress``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.ProgressEvent,``0})">
+<summary>
+ Occurs to indicate progress while downloading media data.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onplaying``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the audio or video has started playing.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onplay``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the play method is requested.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onpause``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when playback is paused.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmousewheel``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.MouseWheelEvent,``0})">
+<summary>
+ Fires when the wheel button is rotated.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmouseup``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.MouseEvent,``0})">
+<summary>
+ Fires when the user releases a mouse button while the mouse is over the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmouseover``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.MouseEvent,``0})">
+<summary>
+ Fires when the user moves the mouse pointer into the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmouseout``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.MouseEvent,``0})">
+<summary>
+ Fires when the user moves the mouse pointer outside the boundaries of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmousemove``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.MouseEvent,``0})">
+<summary>
+ Fires when the user moves the mouse over the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmousedown``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.MouseEvent,``0})">
+<summary>
+ Fires when the user clicks the object with either mouse button.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onloadstart``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when Internet Explorer begins looking for media data.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onloadedmetadata``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the duration and dimensions of the media have been determined.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onloadeddata``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when media data is loaded at the current playback position.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onload``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Fires immediately after the browser loads the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onkeyup``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.KeyboardEvent,``0})">
+<summary>
+ Fires when the user releases a key.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onkeypress``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.KeyboardEvent,``0})">
+<summary>
+ Fires when the user presses an alphanumeric key.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onkeydown``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.KeyboardEvent,``0})">
+<summary>
+ Fires when the user presses a key.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onfocus``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.FocusEvent,``0})">
+<summary>
+ Fires when the object receives focus.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onerror``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Fires when an error occurs during object loading.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onended``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the end of playback is reached.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onemptied``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the media element is reset to its initial state.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondurationchange``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when the duration attribute is updated.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragstart``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.DragEvent,``0})">
+<summary>
+ Fires on the source object when the user starts to drag a text selection or selected object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragover``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.DragEvent,``0})">
+<summary>
+ Fires on the target element continuously while the user drags the object over a valid drop target.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragleave``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.DragEvent,``0})">
+<summary>
+ Fires on the target object when the user moves the mouse out of a valid drop target during a drag operation.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragenter``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.DragEvent,``0})">
+<summary>
+ Fires on the target element when the user drags the object to a valid drop target.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragend``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.DragEvent,``0})">
+<summary>
+ Fires on the source object when the user releases the mouse at the close of a drag operation.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondrag``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.DragEvent,``0})">
+<summary>
+ Fires on the source object continuously during a drag operation.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondeactivate``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.UIEvent,``0})">
+<summary>
+ Fires when the activeElement is changed from the current object to another object in the parent document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondblclick``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.MouseEvent,``0})">
+<summary>
+ Fires when the user double-clicks the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.oncontextmenu``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.PointerEvent,``0})">
+<summary>
+ Fires when the user clicks the right mouse button in the client area, opening the context menu.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onclick``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.MouseEvent,``0})">
+<summary>
+ Fires when the user clicks the left mouse button on the object
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onchange``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Fires when the contents of the object or selection have changed.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.oncanplay``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Occurs when playback is possible, but would require further buffering.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onblur``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.FocusEvent,``0})">
+<summary>
+ Fires when the object loses the input focus.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onbeforedeactivate``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.UIEvent,``0})">
+<summary>
+ Fires immediately before the activeElement is changed from the current object to another object in the parent document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onbeforeactivate``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.UIEvent,``0})">
+<summary>
+ Fires immediately before the object is set as the active element.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onactivate``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.UIEvent,``0})">
+<summary>
+ Fires when the object is set as the active element.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onabort``1(Microsoft.FSharp.Core.FSharpFunc{Browser.Types.Event,``0})">
+<summary>
+ Fires when the user aborts the download.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.location(Browser.Types.Location)">
+<summary>
+ Contains information about the current URL.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.links(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection of all a objects that specify the href property and all area objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.linkColor(System.String)">
+<summary>
+ Sets or gets the color of the document links.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.lastModified(System.String)">
+<summary>
+ Gets the date that the page was last modified, if the page supplies one.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.inputEncoding(System.String)">
+<summary>
+ Returns the character encoding used to create the webpage that is loaded into the document object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.implementation(Browser.Types.DOMImplementation)">
+<summary>
+ Gets the implementation object of the current document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.images(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection, in source order, of img objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.forms(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection, in source order, of all form objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.fgColor(System.String)">
+<summary>
+ Sets or gets the foreground (text) color of the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.embeds(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection of all embed objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.domain(System.String)">
+<summary>
+ Sets or gets the security domain of the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.documentElement(Browser.Types.HTMLElement)">
+<summary>
+ Gets a reference to the root node of the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.doctype(Browser.Types.DocumentType)">
+<summary>
+ Gets an object representing the document type declaration associated with the current document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.dir(System.String)">
+<summary>
+ Sets or retrieves a value that indicates the reading order of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.designMode(System.String)">
+<summary>
+ Sets or gets a value that indicates whether the document can be edited.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.compatMode(System.String)">
+<summary>
+ Gets a value that indicates whether standards-compliant mode is switched on for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.charset(System.String)">
+<summary>
+ Gets or sets the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.body(Browser.Types.HTMLElement)">
+<summary>
+ Specifies the beginning and end of the document body.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.bgColor(System.String)">
+<summary>
+ Deprecated. Sets or retrieves a value that indicates the background color behind the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.applets(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection of all applet objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.anchors(Browser.Types.HTMLCollection)">
+<summary>
+ Retrieves a collection of all a objects that have a name and/or id property. Objects in this collection are in HTML source order.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.all(Browser.Types.HTMLCollection)">
+<summary>
+ Returns a reference to the collection of elements contained by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.alinkColor(System.String)">
+<summary>
+ Sets or gets the color of all active links in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.activeElement(Browser.Types.Element)">
+<summary>
+ Gets the object that has the focus when the parent document has focus.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.URLUnencoded(System.String)">
+<summary>
+ Gets the URL for the document, stripped of any character encoding.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.URL(System.String)">
+<summary>
+ Sets or gets the URL for the current document.
+</summary>
+</member>
+<member name="M:Browser.Types.Document.queryCommandValue(System.String)">
+ <summary>Returns the current value of the document, range, or current selection for the given command.</summary>
+ <param name="commandId">String that specifies a command identifier.</param>
+</member>
+<member name="M:Browser.Types.Document.queryCommandText(System.String)">
+ <summary>Retrieves the string associated with a command.</summary>
+ <param name="commandId">String that contains the identifier of a command. This can be any command identifier given in the list of Command Identifiers.</param>
+</member>
+<member name="M:Browser.Types.Document.queryCommandSupported(System.String)">
+ <summary>Returns a Boolean value that indicates whether the current command is supported on the current range.</summary>
+ <param name="commandId">Specifies a command identifier.</param>
+</member>
+<member name="M:Browser.Types.Document.queryCommandState(System.String)">
+ <summary>Returns a Boolean value that indicates the current state of the command.</summary>
+ <param name="commandId">String that specifies a command identifier.</param>
+</member>
+<member name="M:Browser.Types.Document.queryCommandIndeterm(System.String)">
+ <summary>Returns a Boolean value that indicates whether the specified command is in the indeterminate state.</summary>
+ <param name="commandId">String that specifies a command identifier.</param>
+</member>
+<member name="M:Browser.Types.Document.queryCommandEnabled(System.String)">
+ <summary>Returns a Boolean value that indicates whether a specified command can be successfully executed using execCommand, given the current state of the document.</summary>
+ <param name="commandId">Specifies a command identifier.</param>
+</member>
+<member name="M:Browser.Types.Document.open(Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+ <summary>Opens a new window and loads a document specified by a given URL. Also, opens a new window that uses the url parameter and the name parameter to collect the output of the write method and the writeln method.</summary>
+ <param name="url">Specifies a MIME type for the document.</param>
+ <param name="name">Specifies the name of the window. This name is used as the value for the TARGET attribute on a form or an anchor element.</param>
+ <param name="features">Contains a list of items separated by commas. Each item consists of an option and a value, separated by an equals sign (for example, "fullscreen=yes, toolbar=yes"). The following values are supported.</param>
+ <param name="replace">Specifies whether the existing entry for the document is replaced in the history list.</param>
+</member>
+<member name="M:Browser.Types.Document.hasFocus">
+<summary>
+ Gets a value indicating whether the object currently has focus.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.xmlVersion">
+<summary>
+ Gets or sets the version attribute specified in the declaration of an XML document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.vlinkColor">
+<summary>
+ Sets or gets the color of the links that the user has visited.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.title">
+<summary>
+ Contains the title of the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.scripts">
+<summary>
+ Retrieves a collection of all script objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.referrer">
+<summary>
+ Gets the URL of the location that referred the user to the current page.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.readyState">
+<summary>
+ Retrieves a value that indicates the current state of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onwaiting``1">
+<summary>
+ Occurs when playback stops because the next frame of a video resource is not available.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onvolumechange``1">
+<summary>
+ Occurs when the volume is changed, or playback is muted or unmuted.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ontimeupdate``1">
+<summary>
+ Occurs to indicate the current playback position.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onsuspend``1">
+<summary>
+ Occurs if the load operation has been intentionally halted.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onstop``1">
+<summary>
+ Fires when the user clicks the Stop button or leaves the Web page.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onstalled``1">
+<summary>
+ Occurs when the download has stopped.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onselect``1">
+<summary>
+ Fires when the current selection changes.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onseeking``1">
+<summary>
+ Occurs when the current playback position is moved.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onseeked``1">
+<summary>
+ Occurs when the seek operation ends.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onscroll``1">
+<summary>
+ Fires when the user repositions the scroll box in the scroll bar on the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onreset``1">
+<summary>
+ Fires when the user resets a form.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onreadystatechange``1">
+<summary>
+ Fires when the state of the object has changed.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onratechange``1">
+<summary>
+ Occurs when the playback rate is increased or decreased.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onprogress``1">
+<summary>
+ Occurs to indicate progress while downloading media data.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onplaying``1">
+<summary>
+ Occurs when the audio or video has started playing.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onplay``1">
+<summary>
+ Occurs when the play method is requested.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onpause``1">
+<summary>
+ Occurs when playback is paused.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmousewheel``1">
+<summary>
+ Fires when the wheel button is rotated.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmouseup``1">
+<summary>
+ Fires when the user releases a mouse button while the mouse is over the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmouseover``1">
+<summary>
+ Fires when the user moves the mouse pointer into the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmouseout``1">
+<summary>
+ Fires when the user moves the mouse pointer outside the boundaries of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmousemove``1">
+<summary>
+ Fires when the user moves the mouse over the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onmousedown``1">
+<summary>
+ Fires when the user clicks the object with either mouse button.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onloadstart``1">
+<summary>
+ Occurs when Internet Explorer begins looking for media data.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onloadedmetadata``1">
+<summary>
+ Occurs when the duration and dimensions of the media have been determined.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onloadeddata``1">
+<summary>
+ Occurs when media data is loaded at the current playback position.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onload``1">
+<summary>
+ Fires immediately after the browser loads the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onkeyup``1">
+<summary>
+ Fires when the user releases a key.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onkeypress``1">
+<summary>
+ Fires when the user presses an alphanumeric key.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onkeydown``1">
+<summary>
+ Fires when the user presses a key.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onfocus``1">
+<summary>
+ Fires when the object receives focus.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onerror``1">
+<summary>
+ Fires when an error occurs during object loading.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onended``1">
+<summary>
+ Occurs when the end of playback is reached.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onemptied``1">
+<summary>
+ Occurs when the media element is reset to its initial state.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondurationchange``1">
+<summary>
+ Occurs when the duration attribute is updated.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragstart``1">
+<summary>
+ Fires on the source object when the user starts to drag a text selection or selected object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragover``1">
+<summary>
+ Fires on the target element continuously while the user drags the object over a valid drop target.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragleave``1">
+<summary>
+ Fires on the target object when the user moves the mouse out of a valid drop target during a drag operation.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragenter``1">
+<summary>
+ Fires on the target element when the user drags the object to a valid drop target.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondragend``1">
+<summary>
+ Fires on the source object when the user releases the mouse at the close of a drag operation.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondrag``1">
+<summary>
+ Fires on the source object continuously during a drag operation.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondeactivate``1">
+<summary>
+ Fires when the activeElement is changed from the current object to another object in the parent document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.ondblclick``1">
+<summary>
+ Fires when the user double-clicks the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.oncontextmenu``1">
+<summary>
+ Fires when the user clicks the right mouse button in the client area, opening the context menu.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onclick``1">
+<summary>
+ Fires when the user clicks the left mouse button on the object
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onchange``1">
+<summary>
+ Fires when the contents of the object or selection have changed.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.oncanplay``1">
+<summary>
+ Occurs when playback is possible, but would require further buffering.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onblur``1">
+<summary>
+ Fires when the object loses the input focus.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onbeforedeactivate``1">
+<summary>
+ Fires immediately before the activeElement is changed from the current object to another object in the parent document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onbeforeactivate``1">
+<summary>
+ Fires immediately before the object is set as the active element.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onactivate``1">
+<summary>
+ Fires when the object is set as the active element.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.onabort``1">
+<summary>
+ Fires when the user aborts the download.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.location">
+<summary>
+ Contains information about the current URL.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.links">
+<summary>
+ Retrieves a collection of all a objects that specify the href property and all area objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.linkColor">
+<summary>
+ Sets or gets the color of the document links.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.lastModified">
+<summary>
+ Gets the date that the page was last modified, if the page supplies one.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.inputEncoding">
+<summary>
+ Returns the character encoding used to create the webpage that is loaded into the document object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.implementation">
+<summary>
+ Gets the implementation object of the current document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.images">
+<summary>
+ Retrieves a collection, in source order, of img objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.forms">
+<summary>
+ Retrieves a collection, in source order, of all form objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.fgColor">
+<summary>
+ Sets or gets the foreground (text) color of the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.embeds">
+<summary>
+ Retrieves a collection of all embed objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.domain">
+<summary>
+ Sets or gets the security domain of the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.documentElement">
+<summary>
+ Gets a reference to the root node of the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.doctype">
+<summary>
+ Gets an object representing the document type declaration associated with the current document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.dir">
+<summary>
+ Sets or retrieves a value that indicates the reading order of the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.designMode">
+<summary>
+ Sets or gets a value that indicates whether the document can be edited.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.compatMode">
+<summary>
+ Gets a value that indicates whether standards-compliant mode is switched on for the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.charset">
+<summary>
+ Gets or sets the character set used to encode the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.body">
+<summary>
+ Specifies the beginning and end of the document body.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.bgColor">
+<summary>
+ Deprecated. Sets or retrieves a value that indicates the background color behind the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.applets">
+<summary>
+ Retrieves a collection of all applet objects in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.anchors">
+<summary>
+ Retrieves a collection of all a objects that have a name and/or id property. Objects in this collection are in HTML source order.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.all">
+<summary>
+ Returns a reference to the collection of elements contained by the object.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.alinkColor">
+<summary>
+ Sets or gets the color of all active links in the document.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.activeElement">
+<summary>
+ Gets the object that has the focus when the parent document has focus.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.URLUnencoded">
+<summary>
+ Gets the URL for the document, stripped of any character encoding.
+</summary>
+</member>
+<member name="P:Browser.Types.Document.URL">
+<summary>
+ Sets or gets the URL for the current document.
+</summary>
+</member>
+<member name="M:Browser.Types.Document.getSelection">
+<summary>
+ Returns an object representing the current selection of the document that is loaded into the object displaying a webpage.
+</summary>
+</member>
+<member name="M:Browser.Types.Document.getElementsByTagName(System.String)">
+<summary>
+ Retrieves a collection of objects based on the specified element name.
+</summary>
+</member>
+<member name="M:Browser.Types.Document.getElementsByName(System.String)">
+ <summary>Gets a collection of objects based on the value of the NAME or ID attribute.</summary>
+ <param name="elementName">Gets a collection of objects based on the value of the NAME or ID attribute.</param>
+</member>
+<member name="M:Browser.Types.Document.getElementById(System.String)">
+ <summary>Returns a reference to the first object with the specified value of the ID or NAME attribute.</summary>
+ <param name="elementId">String that specifies the ID value. Case-insensitive.</param>
+ <param name="elementId">String that specifies the ID value. Case-insensitive.</param>
+</member>
+<member name="M:Browser.Types.Document.focus">
+<summary>
+ Causes the element to receive the focus and executes the code specified by the onfocus event.
+</summary>
+</member>
+<member name="M:Browser.Types.Document.execCommandShowHelp(System.String)">
+ <summary>Displays help information for the given command identifier.</summary>
+ <param name="commandId">Displays help information for the given command identifier.</param>
+</member>
+<member name="M:Browser.Types.Document.execCommand(System.String,Microsoft.FSharp.Core.FSharpOption{System.Boolean},Microsoft.FSharp.Core.FSharpOption{System.Object})">
+ <summary>Executes a command on the current document, current selection, or the given range.</summary>
+ <param name="commandId">String that specifies the command to execute. This command can be any of the command identifiers that can be executed in script.</param>
+ <param name="showUI">Display the user interface, defaults to false.</param>
+ <param name="value">Value to assign.</param>
+</member>
+<member name="M:Browser.Types.Document.elementFromPoint(System.Double,System.Double)">
+ <summary>Returns the element for the specified x coordinate and the specified y coordinate.</summary>
+ <param name="x">The x-offset</param>
+ <param name="y">The y-offset</param>
+</member>
+<member name="M:Browser.Types.Document.createTreeWalker(Browser.Types.Node,Microsoft.FSharp.Core.FSharpOption{System.Double},Microsoft.FSharp.Core.FSharpOption{Browser.Types.NodeFilter},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+ <summary>Creates a TreeWalker object that you can use to traverse filtered lists of nodes or elements in a document.</summary>
+ <param name="root">The root element or node to start traversing on.</param>
+ <param name="whatToShow">The type of nodes or elements to appear in the node list. For more information, see whatToShow.</param>
+ <param name="filter">A custom NodeFilter function to use.</param>
+ <param name="entityReferenceExpansion">A flag that specifies whether entity reference nodes are expanded.</param>
+</member>
+<member name="M:Browser.Types.Document.createTextNode(System.String)">
+ <summary>Creates a text string from the specified value.</summary>
+ <param name="data">String that specifies the nodeValue property of the text node.</param>
+</member>
+<member name="M:Browser.Types.Document.createRange">
+<summary>
+ Returns an empty range object that has both of its boundary points positioned at the beginning of the document.
+</summary>
+</member>
+<member name="M:Browser.Types.Document.createNodeIterator(Browser.Types.Node,Microsoft.FSharp.Core.FSharpOption{System.Double},Microsoft.FSharp.Core.FSharpOption{Browser.Types.NodeFilter},Microsoft.FSharp.Core.FSharpOption{System.Boolean})">
+ <summary>Creates a NodeIterator object that you can use to traverse filtered lists of nodes or elements in a document.</summary>
+ <param name="root">The root element or node to start traversing on.</param>
+ <param name="whatToShow">The type of nodes or elements to appear in the node list</param>
+ <param name="filter">A custom NodeFilter function to use. For more information, see filter. Use null for no filter.</param>
+ <param name="entityReferenceExpansion">A flag that specifies whether entity reference nodes are expanded.</param>
+</member>
+<member name="M:Browser.Types.Document.createElement(System.String)">
+ <summary>Creates an instance of the element for the specified tag.</summary>
+ <param name="tagName">The name of an element.</param>
+</member>
+<member name="M:Browser.Types.Document.createDocumentFragment">
+<summary>
+ Creates a new document.
+</summary>
+</member>
+<member name="M:Browser.Types.Document.createComment(System.String)">
+ <summary>Creates a comment object with the specified data.</summary>
+ <param name="data">Sets the comment object's data.</param>
+</member>
+<member name="M:Browser.Types.Document.createAttribute(System.String)">
+ <summary>Creates an attribute object with a specified name.</summary>
+ <param name="name">String that sets the attribute object's name.</param>
+</member>
+<member name="M:Browser.Types.Document.close">
+<summary>
+ Closes an output stream and forces the sent data to display.
+</summary>
+</member>
+<member name="M:Fable.Import.Browser.obsolete``1">
+<summary>
+ Use Browser
+</summary>
+</member>
+</members>
+</doc>

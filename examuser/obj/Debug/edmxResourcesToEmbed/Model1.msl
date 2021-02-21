@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище serviceModelContainer" CdmEntityContainer="serviceContext">
+    <EntitySetMapping Name="carinfos">
+      <EntityTypeMapping TypeName="serviceModel.carinfo">
+        <MappingFragment StoreEntitySet="carinfos">
+          <ScalarProperty Name="car_id" ColumnName="car_id" />
+          <ScalarProperty Name="mark" ColumnName="mark" />
+          <ScalarProperty Name="cartitle" ColumnName="cartitle" />
+          <ScalarProperty Name="model" ColumnName="model" />
+          <ScalarProperty Name="imgpath" ColumnName="imgpath" />
+          <ScalarProperty Name="hwp" ColumnName="hwp" />
+          <ScalarProperty Name="cardescr" ColumnName="cardescr" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usses">
+      <EntityTypeMapping TypeName="serviceModel.uss">
+        <MappingFragment StoreEntitySet="uss">
+          <ScalarProperty Name="Id_u" ColumnName="Id_u" />
+          <ScalarProperty Name="loginuser" ColumnName="loginuser" />
+          <ScalarProperty Name="lattnameuser" ColumnName="lattnameuser" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="dateordered" ColumnName="dateordered" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

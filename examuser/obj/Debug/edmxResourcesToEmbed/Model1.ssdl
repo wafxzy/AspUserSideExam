@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище serviceModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="carinfos">
+    <Key>
+      <PropertyRef Name="car_id" />
+    </Key>
+    <Property Name="car_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mark" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="cartitle" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="model" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="imgpath" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="hwp" Type="int" Nullable="false" />
+    <Property Name="cardescr" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="uss">
+    <Key>
+      <PropertyRef Name="Id_u" />
+    </Key>
+    <Property Name="Id_u" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="loginuser" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="lattnameuser" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="phone" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="dateordered" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="Хранилище serviceModelContainer">
+    <EntitySet Name="carinfos" EntityType="Self.carinfos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="uss" EntityType="Self.uss" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

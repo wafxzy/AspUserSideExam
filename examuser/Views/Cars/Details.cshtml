@@ -1,0 +1,66 @@
+﻿@model examuser.carinfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>carinfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cartitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cartitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.model)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.model)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imgpath)
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.imgpath)" width="450" height="350" multiple />
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hwp)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hwp)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cardescr)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cardescr)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <button class="btn btn-default" onclick="location.href='@Url.Action("GalleryList", "Cars")';return false;"> Back</button>
+
+</p>

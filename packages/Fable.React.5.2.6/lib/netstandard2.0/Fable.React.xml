@@ -1,0 +1,799 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>Fable.React</name></assembly>
+<members>
+<member name="T:Fable.React.PureStatelessComponent`1">
+<summary>
+ A react component that implements `shouldComponentUpdate()` with a shallow prop comparison.
+
+ Usage:
+ ```
+ type MyComponent(initialProps) =
+     inherit React.PureStatelessComponent&lt;MyProps&gt;(initialProps)
+     override this.render() =
+         let msg = sprintf &quot;Hello %s, you have %i €&quot;
+                     this.props.name this.props.value
+         div [] [ofString msg]
+ ```
+</summary>
+</member>
+<member name="T:Fable.React.PureComponent`2">
+<summary>
+ A react component that implements `shouldComponentUpdate()` with a shallow prop and state comparison.
+
+ Usage:
+ ```
+ type MyComponent(initialProps) =
+     inherit React.PureComponent&lt;MyProps, MyState&gt;(initialProps)
+     base.setInitState({ value = 5 })
+     override this.render() =
+         let msg = sprintf &quot;Hello %s, you have %i €&quot;
+                     this.props.name this.state.value
+         div [] [ofString msg]
+ ```
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.shouldComponentUpdate(`0,`1)">
+<summary>
+ Use shouldComponentUpdate() to let React know if a component’s output is not affected by the current change in state or props. The default behavior is to re-render on every state change, and in the vast majority of cases you should rely on the default behavior.
+ shouldComponentUpdate() is invoked before rendering when new props or state are being received. Defaults to true. This method is not called for the initial render or when forceUpdate() is used.
+ Returning false does not prevent child components from re-rendering when their state changes.
+ Currently, if shouldComponentUpdate() returns false, then componentWillUpdate(), render(), and componentDidUpdate() will not be invoked. Note that in the future React may treat shouldComponentUpdate() as a hint rather than a strict directive, and returning false may still result in a re-rendering of the component.
+ If you determine a specific component is slow after profiling, you may change it to inherit from React.PureComponent which implements shouldComponentUpdate() with a shallow prop and state comparison. If you are confident you want to write it by hand, you may compare this.props with nextProps and this.state with nextState and return false to tell React the update can be skipped.
+ We do not recommend doing deep equality checks or using JSON.stringify() in shouldComponentUpdate(). It is very inefficient and will harm performance.
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.setState(Microsoft.FSharp.Core.FSharpFunc{`1,Microsoft.FSharp.Core.FSharpFunc{`0,`1}})">
+<summary>
+ Overload of `setState` accepting updater function with the signature: `(prevState, props) =&gt; stateChange`
+ prevState is a reference to the previous state. It should not be directly mutated. Instead, changes should be represented by building a new object based on the input from prevState and props.
+ Both prevState and props received by the updater function are guaranteed to be up-to-date. The output of the updater is shallowly merged with prevState.
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.setState(`1)">
+<summary>
+ ATTENTION: Within the constructor, use `setInitState`
+ Enqueues changes to the component state and tells React that this component and its children need to be re-rendered with the updated state. This is the primary method you use to update the user interface in response to event handlers and server responses.
+ Think of setState() as a request rather than an immediate command to update the component. For better perceived performance, React may delay it, and then update several components in a single pass. React does not guarantee that the state changes are applied immediately.
+ setState() does not always immediately update the component. It may batch or defer the update until later. This makes reading this.state right after calling setState() a potential pitfall. Instead, use componentDidUpdate or a setState callback (setState(updater, callback)), either of which are guaranteed to fire after the update has been applied. If you need to set the state based on the previous state, read about the updater argument below.
+ setState() will always lead to a re-render unless shouldComponentUpdate() returns false. If mutable objects are being used and conditional rendering logic cannot be implemented in shouldComponentUpdate(), calling setState() only when the new state differs from the previous state will avoid unnecessary re-renders.
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.setInitState(`1)">
+<summary>
+ This method can only be called in the constructor
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.render">
+<summary>
+ This function should be pure, meaning that it does not modify component state, it returns the same result each time it’s invoked, and it does not directly interact with the browser. If you need to interact with the browser, perform your work in componentDidMount() or the other lifecycle methods instead. Keeping render() pure makes components easier to think about.
+ &gt; render() will not be invoked if shouldComponentUpdate() returns false.
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.forceUpdate(Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit}})">
+<summary>
+ By default, when your component’s state or props change, your component will re-render. If your render() method depends on some other data, you can tell React that the component needs re-rendering by calling forceUpdate().
+ Calling forceUpdate() will cause render() to be called on the component, skipping shouldComponentUpdate(). This will trigger the normal lifecycle methods for child components, including the shouldComponentUpdate() method of each child. React will still only update the DOM if the markup changes.
+ Normally you should try to avoid all uses of forceUpdate() and only read from this.props and this.state in render().
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.componentWillUpdate(`0,`1)">
+<summary>
+ Invoked immediately before rendering when new props or state are being received. Use this as an opportunity to perform preparation before an update occurs. This method is not called for the initial render.
+ Note that you cannot call this.setState() here; nor should you do anything else (e.g. dispatch a Redux action) that would trigger an update to a React component before componentWillUpdate() returns.
+ If you need to update state in response to props changes, use componentWillReceiveProps() instead.
+ &gt; componentWillUpdate() will not be invoked if shouldComponentUpdate() returns false.
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.componentWillUnmount">
+<summary>
+ Invoked immediately before a component is unmounted and destroyed. Perform any necessary cleanup in this method, such as invalidating timers, canceling network requests, or cleaning up any subscriptions that were created in componentDidMount().
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.componentWillReceiveProps(`0)">
+<summary>
+ Invoked before a mounted component receives new props. If you need to update the state in response to prop changes (for example, to reset it), you may compare this.props and nextProps and perform state transitions using this.setState() in this method.
+ Note that React may call this method even if the props have not changed, so make sure to compare the current and next values if you only want to handle changes. This may occur when the parent component causes your component to re-render.
+ React doesn’t call componentWillReceiveProps() with initial props during mounting. It only calls this method if some of component’s props may update. Calling this.setState() generally doesn’t trigger componentWillReceiveProps().
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.componentWillMount">
+<summary>
+ Invoked immediately before mounting occurs. It is called before render(), therefore calling setState() synchronously in this method will not trigger an extra rendering. Generally, we recommend using the constructor() instead.
+ Avoid introducing any side-effects or subscriptions in this method. For those use cases, use componentDidMount() instead.
+ This is the only lifecycle hook called on server rendering.
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.componentDidUpdate(`0,`1)">
+<summary>
+ Invoked immediately after updating occurs. This method is not called for the initial render.
+ Use this as an opportunity to operate on the DOM when the component has been updated. This is also a good place to do network requests as long as you compare the current props to previous props (e.g. a network request may not be necessary if the props have not changed).
+ &gt; componentDidUpdate() will not be invoked if shouldComponentUpdate() returns false.
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.componentDidMount">
+<summary>
+ Invoked immediately after a component is mounted. Initialization that requires DOM nodes should go here. If you need to load data from a remote endpoint, this is a good place to instantiate the network request.
+ This method is a good place to set up any subscriptions. If you do that, don’t forget to unsubscribe in componentWillUnmount().
+ Calling setState() in this method will trigger an extra rendering, but it is guaranteed to flush during the same tick. This guarantees that even though the render() will be called twice in this case, the user won’t see the intermediate state. Use this pattern with caution because it often causes performance issues. It can, however, be necessary for cases like modals and tooltips when you need to measure a DOM node before rendering something that depends on its size or position.
+</summary>
+</member>
+<member name="M:Fable.React.Component`2.componentDidCatch(System.Exception,System.Object)">
+<summary>
+ Error boundaries are React components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed. Error boundaries catch errors during rendering, in lifecycle methods, and in constructors of the whole tree below them.
+ A class component becomes an error boundary if it defines this lifecycle method. Calling setState() in it lets you capture an unhandled JavaScript error in the below tree and display a fallback UI. Only use error boundaries for recovering from unexpected exceptions; don’t try to use them for control flow.
+ For more details, see [Error Handling in React 16](https://reactjs.org/blog/2017/07/26/error-handling-in-react-16.html).
+ &gt; Error boundaries only catch errors in the components below them in the tree. An error boundary can’t catch an error within itself.
+</summary>
+</member>
+<member name="T:Fable.React.Component`2">
+<summary>
+ Create a React component by inheriting this class as follows
+
+ ```
+ type MyComponent(initialProps) =
+     inherit React.Component&lt;MyProps, MyState&gt;(initialProps)
+     base.setInitState({ value = 5 })
+
+     override this.render() =
+         // Don&apos;t use captured `initialProps` from constructor,
+         // use `this.props` instead (updated version)
+         let msg = sprintf &quot;Hello %s, you have %i €&quot;
+                     this.props.name this.state.value
+         div [] [ofString msg]
+ ```
+</summary>
+</member>
+<member name="M:Fable.React.IReactDomServer.renderToString(Fable.React.ReactElement)">
+<summary>
+ Render a React element to its initial HTML. This should only be used on the server. React will return an HTML string. You can use this method to generate HTML on the server and send the markup down on the initial request for faster page loads and to allow search engines to crawl your pages for SEO purposes.
+ If you call ReactDOM.render() on a node that already has this server-rendered markup, React will preserve it and only attach event handlers, allowing you to have a very performant first-load experience.
+</summary>
+</member>
+<member name="M:Fable.React.IReactDomServer.renderToStaticMarkup(Fable.React.ReactElement)">
+<summary>
+ Similar to renderToString, except this doesn&apos;t create extra DOM attributes such as data-reactid, that React uses internally. This is useful if you want to use React as a simple static page generator, as stripping away the extra attributes can save lots of bytes.
+</summary>
+</member>
+<member name="M:Fable.React.IReactDom.unmountComponentAtNode(Browser.Types.Element)">
+<summary>
+ Remove a mounted React component from the DOM and clean up its event handlers and state. If no component was mounted in the container, calling this function does nothing. Returns true if a component was unmounted and false if there was no component to unmount.
+</summary>
+</member>
+<member name="M:Fable.React.IReactDom.render(Fable.React.ReactElement,Browser.Types.Element,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit}})">
+<summary>
+ Render a React element into the DOM in the supplied container.
+ If the React element was previously rendered into container, this will perform an update on it and only mutate the DOM as necessary to reflect the latest React element.
+ If the optional callback is provided, it will be executed after the component is rendered or updated.
+</summary>
+</member>
+<member name="M:Fable.React.IReactDom.hydrate(Fable.React.ReactElement,Browser.Types.Element,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit}})">
+<summary>
+ Same as render(), but is used to hydrate a container whose HTML contents were rendered by ReactDOMServer. React will attempt to attach event listeners to the existing markup.
+</summary>
+</member>
+<member name="M:Fable.React.IReactDom.createPortal(Fable.React.ReactElement,Browser.Types.Element)">
+<summary>
+ Creates a portal. Portals provide a way to render children into a DOM node that exists outside the hierarchy of the DOM component.
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useStateLazy``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0})">
+<summary>
+ Returns the current state with a function to update it.
+ More info at https://reactjs.org/docs/hooks-reference.html#usestate
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useState``1(``0)">
+<summary>
+ Returns the current state with a function to update it.
+ More info at  https://reactjs.org/docs/hooks-reference.html#usestate
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useRef``1(``0)">
+<summary>
+ The returned object will persist for the full lifetime of the component.
+ More info at https://reactjs.org/docs/hooks-reference.html#useref
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useMemo``1(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,``0},System.Object[])">
+<summary>
+ Accepts a &quot;create&quot; function and an array of dependencies and returns a memoized value
+ More info at https://reactjs.org/docs/hooks-reference.html#usememo
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useEffectDisposable(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,System.IDisposable},Microsoft.FSharp.Core.FSharpOption{System.Object[]})">
+<summary>
+ Accepts a function that contains effectful code and returns a disposable for clean-up
+ More info at https://reactjs.org/docs/hooks-reference.html#useeffect
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useEffect(Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.Unit,Microsoft.FSharp.Core.Unit},Microsoft.FSharp.Core.FSharpOption{System.Object[]})">
+<summary>
+ Accepts a function that contains imperative, possibly effectful code
+ More info at https://reactjs.org/docs/hooks-reference.html#useeffect
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useDebugValue``1(``0,Microsoft.FSharp.Core.FSharpFunc{``0,System.String})">
+<summary>
+ Defers formatting of debug value until the Hook is actually inspected
+ More info at https://reactjs.org/docs/hooks-reference.html#usedebugvalue
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useDebugValue(System.String)">
+<summary>
+ Display a label for custom hooks in React DevTools.
+ More info at https://reactjs.org/docs/hooks-reference.html#usedebugvalue
+</summary>
+</member>
+<member name="M:Fable.React.IHooks.useContext``1(Fable.React.IContext{``0})">
+<summary>
+ Accepts a context object (the value returned from createContext) and
+ returns the current context value for that context. The current context
+ value is determined by the value prop of the nearest &lt;MyContext.Provider&gt;
+ above the calling component in the tree.
+ More info at https://reactjs.org/docs/hooks-reference.html#usecontext
+</summary>
+</member>
+<member name="M:Fable.React.FunctionComponent.Of``1(Microsoft.FSharp.Core.FSharpFunc{``0,Fable.React.ReactElement},Microsoft.FSharp.Core.FSharpOption{System.String},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``0,System.Boolean}}},Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Core.FSharpFunc{``0,System.String}})">
+<summary>
+ Creates a function React component that can use hooks to manage the component&apos;s life cycle,
+ and is displayed in React dev tools (use `displayName` to customize the name).
+ Uses React.memo if `memoizeWith` is specified (check `equalsButFunctions` and `memoEqualsButFunctions` helpers).
+ When you need a key to optimize collections in React you can use `withKey` argument or define a `key` field in the props object.
+</summary>
+</member>
+<member name="M:Fable.React.FunctionComponent.Lazy``1(Microsoft.FSharp.Core.FSharpFunc{``0,Fable.React.ReactElement},Fable.React.ReactElement)">
+<summary>
+ Creates a lazy React component from a function in another file
+ ATTENTION: Requires fable-compiler 2.3, pass the external reference
+ directly to the argument position (avoid pipes)
+</summary>
+</member>
+<member name="P:Fable.React.ReactBindings.React">
+<summary>
+ Mainly intended for internal use
+</summary>
+</member>
+<member name="T:Fable.React.Props.CSSProp.Custom">
+<summary>
+ If you are searching for a way to provide a value not supported by this DSL then use something like: CSSProp.Custom (&quot;align-content&quot;, &quot;center&quot;)
+</summary>
+</member>
+<member name="T:Fable.React.Props.PositionOptions.Inherit">
+<summary>
+ Inherits this property from its parent element. Read about [CSS Inherit](https://www.w3schools.com/CSSref/css_inherit.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.PositionOptions.Initial">
+<summary>
+ Sets this property to its default value. Read more about [CSS Initial value](https://www.w3schools.com/CSSref/css_initial.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.PositionOptions.Sticky">
+<summary>
+ The element is positioned based on the user&apos;s scroll position.
+
+ A sticky element toggles between relative and fixed, depending on the scroll position. It is positioned relative until a given offset position is met in the viewport - then it &quot;sticks&quot; in place (like position:fixed).
+</summary>
+</member>
+<member name="T:Fable.React.Props.PositionOptions.Relative">
+<summary>
+ The element is positioned relative to its normal position, so &quot;left:20px&quot; adds 20 pixels to the element&apos;s LEFT position.
+</summary>
+</member>
+<member name="T:Fable.React.Props.PositionOptions.Fixed">
+<summary>
+ The element is positioned relative to the browser window.
+</summary>
+</member>
+<member name="T:Fable.React.Props.PositionOptions.Absolute">
+<summary>
+ The element is positioned relative to its first positioned (not static) ancestor element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.PositionOptions.Static">
+<summary>
+ Default value. Elements render in order, as they appear in the document flow.
+</summary>
+</member>
+<member name="T:Fable.React.Props.PositionOptions">
+<summary>
+ Specifies the type of positioning method used for an element (static, relative, absolute, fixed, or sticky).
+</summary>
+</member>
+<member name="T:Fable.React.Props.TextAlignOptions.Inherit">
+<summary>
+ Inherits this property from its parent element. Read about [CSS Inherit](https://www.w3schools.com/CSSref/css_inherit.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.TextAlignOptions.Initial">
+<summary>
+ Sets this property to its default value. Read more about [CSS Initial value](https://www.w3schools.com/CSSref/css_initial.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.TextAlignOptions.Justify">
+<summary>
+ Stretches the lines so that each line has equal width (like in newspapers and magazines).
+</summary>
+</member>
+<member name="T:Fable.React.Props.TextAlignOptions.Center">
+<summary>
+ Centers the text.
+</summary>
+</member>
+<member name="T:Fable.React.Props.TextAlignOptions.Right">
+<summary>
+ Aligns the text to the right.
+</summary>
+</member>
+<member name="T:Fable.React.Props.TextAlignOptions.Left">
+<summary>
+ Aligns the text to the left.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions.FlexEnd">
+<summary>
+ The element is positioned at the end of the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions.FlexStart">
+<summary>
+ The element is positioned at the beginning of the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions.Inherit">
+<summary>
+ Inherits this property from its parent element. Read about [CSS Inherit](https://www.w3schools.com/CSSref/css_inherit.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions.Initial">
+<summary>
+ Sets this property to its default value. Read more about [CSS Initial value](https://www.w3schools.com/CSSref/css_initial.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions.Center">
+<summary>
+ The element is positioned at the center of the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions.Stretch">
+<summary>
+ The element is positioned to fit the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions.Baseline">
+<summary>
+ The element is positioned at the baseline of the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions.Auto">
+<summary>
+ Default. The element inherits its parent container&apos;s align-items property, or &quot;stretch&quot; if it has no parent container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignSelfOptions">
+<summary>
+ Specifies the default alignment for items inside the flexible container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions.FlexEnd">
+<summary>
+ Items are positioned at the end of the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions.FlexStart">
+<summary>
+ Items are positioned at the beginning of the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions.Inherit">
+<summary>
+ Inherits this property from its parent element. Read about [CSS Inherit](https://www.w3schools.com/CSSref/css_inherit.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions.Initial">
+<summary>
+ Sets this property to its default value. Read more about [CSS Initial value](https://www.w3schools.com/CSSref/css_initial.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions.Center">
+<summary>
+ Items are positioned at the center of the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions.Stretch">
+<summary>
+ Default. Items are stretched to fit the container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions.Baseline">
+<summary>
+ Items are positioned at the baseline of the container
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions.Normal">
+<summary>
+ The effect of this keyword is dependent of the layout mode we are in. [Read more](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items#Values)
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignItemsOptions">
+<summary>
+ Specifies the default alignment for items inside the flexible container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions.SpaceAround">
+<summary>
+ Lines are evenly distributed in the flex container, with half-size spaces on either end.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions.SpaceBetween">
+<summary>
+ Lines are evenly distributed in the flex container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions.FlexEnd">
+<summary>
+ Lines are packed toward the end of the flex container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions.FlexStart">
+<summary>
+ Lines are packed toward the start of the flex container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions.Inherit">
+<summary>
+ Inherits this property from its parent element. Read about [CSS Inherit](https://www.w3schools.com/CSSref/css_inherit.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions.Initial">
+<summary>
+ /// Sets this property to its default value. Read more about [CSS Initial value](https://www.w3schools.com/CSSref/css_initial.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions.Center">
+<summary>
+ Lines are packed toward the center of the flex container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions.Stretch">
+<summary>
+ Default value. Lines stretch to take up the remaining space.
+</summary>
+</member>
+<member name="T:Fable.React.Props.AlignContentOptions">
+<summary>
+ Modifies the behavior of the [flex-wrap](https://www.w3schools.com/CSSref/css3_pr_flex-wrap.asp) property. It is similar to [align-items](https://www.w3schools.com/CSSref/css3_pr_align-items.asp), but instead of aligning flex items, it aligns flex lines.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.TableRow">
+<summary>
+ Let the element behave like a `&lt;tr&gt;` element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.TableColumn">
+<summary>
+ Let the element behave like a `&lt;col&gt;` element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.TableCell">
+<summary>
+ Let the element behave like a `&lt;td&gt;` element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.TableRowGroup">
+<summary>
+ Let the element behave like a `&lt;tbody&gt;` element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.TableFooterGroup">
+<summary>
+ Let the element behave like a `&lt;tfoot&gt;` element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.TableHeaderGroup">
+<summary>
+ Let the element behave like a `&lt;thead&gt;` element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.TableColumnGroup">
+<summary>
+ Let the element behave like a `&lt;colgroup&gt;` element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.TableCaption">
+<summary>
+ Let the element behave like a `&lt;caption&gt;` element
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.ListItem">
+<summary>
+ Let the element behave like a `&lt;li&gt;` element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.InlineTable">
+<summary>
+ The element is displayed as an inline-level table.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.InlineGrid">
+<summary>
+ Displays an element as an inline-level grid container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.InlineFlex">
+<summary>
+ Displays an element as an inline-level flex container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.InlineBlock">
+<summary>
+ Displays an element as an inline-level block container. The element itself is formatted as an inline element, but you can apply height and width values
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.Table">
+<summary>
+ Let the element behave like a `&lt;table&gt;` element
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.Grid">
+<summary>
+ Displays an element as a block-level grid container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.Flex">
+<summary>
+ Displays an element as a block-level flex container.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.Contents">
+<summary>
+ Makes the container disappear, making the child elements children of the element the next level up in the DOM.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.Block">
+<summary>
+ Displays an element as a block element (like `&lt;p&gt;`). It starts on a new line, and takes up the whole width.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.Inline">
+<summary>
+ Displays an element as an inline element (like `&lt;span&gt;`). Any height and width properties will have no effect.
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.Inherit">
+<summary>
+ Inherits this property from its parent element. Read about [CSS Inherit](https://www.w3schools.com/CSSref/css_inherit.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.Initial">
+<summary>
+ Sets this property to its default value. Read more about [CSS Initial value](https://www.w3schools.com/CSSref/css_initial.asp)
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions.None">
+<summary>
+ The element is completely removed
+</summary>
+</member>
+<member name="T:Fable.React.Props.DisplayOptions">
+<summary>
+ Specifies the display behavior (the type of rendering box) of an element.
+</summary>
+</member>
+<member name="T:Fable.React.Props.HTMLAttr.ValueMultiple">
+<summary>
+ Compiles to same prop as `Value`. Intended for `select` elements
+ with `Multiple` prop set to `true`.
+</summary>
+</member>
+<member name="T:Fable.React.Props.HTMLAttr.Class">
+<summary>
+ Alias of ClassName
+</summary>
+</member>
+<member name="T:Fable.React.Props.SVGAttr.Custom">
+<summary>
+ If you are searching for a way to provide a value not supported by this DSL then use something like: CSSProp.Custom (&quot;align-content&quot;, &quot;center&quot;)
+</summary>
+</member>
+<member name="T:Fable.React.Props.Prop.RefHook">
+<summary>
+ To be used in combination with `useRef` hook
+</summary>
+</member>
+<member name="M:Fable.React.Extensions.Event.get_Checked(Browser.Types.Event)">
+<summary>
+ Access the checked property from target
+ Equivalent to `(this.target :?&gt; HTMLInputElement).checked`
+</summary>
+</member>
+<member name="M:Fable.React.Extensions.Event.get_Value(Browser.Types.Event)">
+<summary>
+ Access the value from target
+ Equivalent to `(this.target :?&gt; HTMLInputElement).value`
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.mountBySelector(System.String,Fable.React.ReactElement)">
+<summary>
+ Finds the first DOM element matching a CSS selector and mounts the React element there
+ Important: Not available in SSR
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.mountById(System.String,Fable.React.ReactElement)">
+<summary>
+ Finds a DOM element by its ID and mounts the React element there
+ Important: Not available in SSR
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.createRef``1(``0)">
+<summary>
+ To be used in constructors of class components
+ (for function components use `useRef` hook)
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.createContext``1(``0)">
+<summary>
+ Creates a Context object. When React renders a component that subscribes to this Context
+ object it will read the current context value from the closest matching Provider above it
+ in the tree. More info at https://reactjs.org/docs/context.html#reactcreatecontext
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.contextConsumer``1(Fable.React.IContext{``0},Microsoft.FSharp.Core.FSharpFunc{``0,Fable.React.ReactElement})">
+<summary>
+ Consumes a context value, either from the nearest parent in the tree, or from the default value.
+ Important: in SSR, this will always consume the context DEFAULT value!
+ More info at https://reactjs.org/docs/context.html#contextconsumer
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.contextProvider``1(Fable.React.IContext{``0},``0,System.Collections.Generic.IEnumerable{Fable.React.ReactElement})">
+<summary>
+ Accepts a context value to be passed to consuming components that are descendants of this Provider.
+ One Provider can be connected to many consumers. Providers can be nested to override values deeper within the tree.
+ Important: In SSR, this is ignored, and the DEFAULT value is consumed!
+ More info at https://reactjs.org/docs/context.html#contextprovider
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.fragment(System.Collections.Generic.IEnumerable{Fable.React.Props.IFragmentProp},System.Collections.Generic.IEnumerable{Fable.React.ReactElement})">
+<summary>
+ Instantiate a React fragment
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.svgEl(System.String,System.Collections.Generic.IEnumerable{Fable.React.Props.IProp},System.Collections.Generic.IEnumerable{Fable.React.ReactElement})">
+<summary>
+ Instantiate an SVG React element
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.voidEl(System.String,System.Collections.Generic.IEnumerable{Fable.React.Props.IHTMLProp})">
+<summary>
+ Instantiate a DOM React element (void)
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.domEl(System.String,System.Collections.Generic.IEnumerable{Fable.React.Props.IHTMLProp},System.Collections.Generic.IEnumerable{Fable.React.ReactElement})">
+<summary>
+ Instantiate a DOM React element
+</summary>
+</member>
+<member name="P:Fable.React.Helpers.nothing">
+<summary>
+ A ReactElement when you don&apos;t want to render anything (null in javascript)
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.ofArray(Fable.React.ReactElement[])">
+<summary>
+ Returns an array **from .render() method**
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.ofList(Microsoft.FSharp.Collections.FSharpList{Fable.React.ReactElement})">
+<summary>
+ Returns a list **from .render() method**
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.ofFloat(System.Double)">
+<summary>
+ Cast a float to a React element (erased in runtime)
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.ofInt(System.Int32)">
+<summary>
+ Cast an int to a React element (erased in runtime)
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.ofOption(Microsoft.FSharp.Core.FSharpOption{Fable.React.ReactElement})">
+<summary>
+ Cast an option value to a React element (erased in runtime)
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.ofString(System.String)">
+<summary>
+ Cast a string to a React element (erased in runtime)
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.str(System.String)">
+<summary>
+ Alias of `ofString`
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.memoEqualsButFunctions``1(``0,``0)">
+<summary>
+ Comparison similar to default React.memo, but ignores functions (e.g. Elmish dispatch).
+ Performs a memberwise comparison where value types and strings are compared by value,
+ and other types by reference.
+ Can be used e.g. with the `FunctionComponent.Of` `memoizeWith` parameter.
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.equalsButFunctions``1(``0,``0)">
+<summary>
+ Normal structural F# comparison, but ignores top-level functions (e.g. Elmish dispatch).
+ Can be used e.g. with the `FunctionComponent.Of` `memoizeWith` parameter.
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.ofImport``1(System.String,System.String,``0,System.Collections.Generic.IEnumerable{Fable.React.ReactElement})">
+<summary>
+ Instantiate an imported React component. The first two arguments must be string literals, &quot;default&quot; can be used for the first one.
+ Example: `ofImport &quot;Map&quot; &quot;leaflet&quot; { x = 10; y = 50 } []`
+</summary>
+</member>
+<member name="M:Fable.React.Helpers.ofType``3(``1,System.Collections.Generic.IEnumerable{Fable.React.ReactElement})">
+<summary>
+ Instantiate a component from a type inheriting React.Component
+ Example: `ofType&lt;MyComponent,_,_&gt; { myProps = 5 } []`
+</summary>
+</member>
+<member name="M:Fable.React.ReactElementTypeModule.memoWith``1(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Core.FSharpFunc{``0,System.Boolean}},Microsoft.FSharp.Core.FSharpFunc{``0,Fable.React.ReactElement})">
+<summary>
+ React.memo is a higher order component. It’s similar to React.PureComponent but for function components instead of classes.
+ If your function renders the same result given the &quot;same&quot; props (according to `areEqual`), you can wrap it in a call to React.memo.
+ React will skip rendering the component, and reuse the last rendered result.
+ By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can use `memoWith`.
+ This version allow you to control the comparison used instead of the default shallow one by provide a custom comparison function.
+</summary>
+</member>
+<member name="M:Fable.React.ReactElementTypeModule.memo``1(Microsoft.FSharp.Core.FSharpFunc{``0,Fable.React.ReactElement})">
+<summary>
+ React.memo is a higher order component. It’s similar to React.PureComponent but for function components instead of classes.
+ If your function component renders the same result given the same props, you can wrap it in a call to React.memo.
+ React will skip rendering the component, and reuse the last rendered result.
+ By default it will only shallowly compare complex objects in the props object. If you want control over the comparison, you can use `memoWith`.
+</summary>
+</member>
+<member name="M:Fable.React.ReactElementTypeModule.create``1(Fable.React.ReactElementType{``0},``0,System.Collections.Generic.IEnumerable{Fable.React.ReactElement})">
+<summary>
+ Create a ReactElement to be rendered from an element type, props and children
+</summary>
+</member>
+<member name="M:Fable.React.ReactiveComponentsHelpers.reactiveCom``3(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{``2,Microsoft.FSharp.Core.FSharpFunc{``1,``1}},Microsoft.FSharp.Core.FSharpFunc{Fable.React.ReactiveComponents.Model{``0,``1},Microsoft.FSharp.Core.FSharpFunc{Microsoft.FSharp.Core.FSharpFunc{``2,Microsoft.FSharp.Core.Unit},Fable.React.ReactElement}},System.String,``0,System.Collections.Generic.IEnumerable{Fable.React.ReactElement})">
+<summary>
+ Renders a stateful React component from functions similar to Elmish
+  * `init` - Initializes component state with given props
+  * `update` - Updates the state when `dispatch` is triggered
+  * `view` - Render function, receives a `ReactiveComponents.Model` object and a `dispatch` function
+  * `key` - The key is necessary to identify React elements in a list, an empty string can be passed otherwise
+  * `props` - External properties passed to the component each time it&apos;s rendered, usually from its parent
+  * `children` - A list of children React elements
+</summary>
+</member>
+<member name="T:Fable.React.ReactiveComponents">
+<summary>
+ Helpers for ReactiveComponents (see #44)
+</summary>
+</member>
+<member name="M:Fable.React.Isomorphic.isomorphicExec``2(Microsoft.FSharp.Core.FSharpFunc{``0,``1},Microsoft.FSharp.Core.FSharpFunc{``0,``1},``0)">
+<summary>
+ Isomorphic helper function for conditional executaion
+ it will execute `clientFn model` on the client side and `serverFn model` on the server side
+</summary>
+</member>
+<member name="M:Fable.ReactServer.castHTMLNode(Fable.React.ReactElement)">
+<summary>
+ Cast a ReactElement safely to an HTMLNode.
+ Returns an empty node if input is not an HTMLNode.
+</summary>
+</member>
+<member name="M:Fable.ReactServer.Raw.writeTo(System.IO.TextWriter,Fable.React.HTMLNode)">
+<summary>
+ Writes the nodes into a TextWriter. DOESN&apos;T ADD `reactroot` attribute.
+</summary>
+</member>
+</members>
+</doc>
